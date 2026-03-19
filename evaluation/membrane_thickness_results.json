@@ -1,0 +1,161 @@
+{
+  "timestamp": "2026-03-19 18:44:18",
+  "parameters": {
+    "n_rays": 16,
+    "ray_extent_px": 20,
+    "min_dab_signal": 0.05,
+    "pixel_size_um": 0.4598,
+    "thickness_threshold_px": 8,
+    "completeness_threshold": 0.5,
+    "dab_thresholds": {
+      "negative": 0.05,
+      "weak": 0.15,
+      "strong": 0.3
+    }
+  },
+  "slides": {
+    "BC_ClassII": {
+      "slide_id": "BC_ClassII",
+      "n_cells": 62881,
+      "thickness_valid": 62881,
+      "thickness_coverage_pct": 100.0,
+      "thickness_px_stats": {
+        "mean": 11.23,
+        "median": 10.0,
+        "std": 4.76,
+        "p5": 5.0,
+        "p25": 7.5,
+        "p75": 14.0,
+        "p95": 20.0
+      },
+      "thickness_um_stats": {
+        "mean": 5.16,
+        "median": 4.6
+      },
+      "grade_distribution": {
+        "0_neg": 1,
+        "1_weak": 4691,
+        "2_moderate": 6771,
+        "3_strong": 51418
+      },
+      "composite_hscore": 274.3,
+      "pct_positive_2plus": 92.5,
+      "regions": {
+        "Patient_Tissue": {
+          "n_cells": 41535,
+          "grade_distribution": {
+            "0_neg": 0,
+            "1_weak": 2268,
+            "2_moderate": 4203,
+            "3_strong": 35064
+          },
+          "composite_hscore": 279.0,
+          "pct_positive_2plus": 94.5,
+          "thickness_px": {
+            "valid": 41535,
+            "mean": 11.23,
+            "median": 10.0,
+            "std": 4.73
+          }
+        },
+        "iCAP_Control": {
+          "n_cells": 21346,
+          "grade_distribution": {
+            "0_neg": 1,
+            "1_weak": 2423,
+            "2_moderate": 2568,
+            "3_strong": 16354
+          },
+          "composite_hscore": 265.3,
+          "pct_positive_2plus": 88.6,
+          "thickness_px": {
+            "valid": 21346,
+            "mean": 11.24,
+            "median": 10.0,
+            "std": 4.83
+          }
+        }
+      }
+    },
+    "BC_ClassIII": {
+      "slide_id": "BC_ClassIII",
+      "n_cells": 98457,
+      "thickness_valid": 98457,
+      "thickness_coverage_pct": 100.0,
+      "thickness_px_stats": {
+        "mean": 11.54,
+        "median": 10.5,
+        "std": 4.8,
+        "p5": 5.5,
+        "p25": 8.0,
+        "p75": 14.5,
+        "p95": 20.5
+      },
+      "thickness_um_stats": {
+        "mean": 5.31,
+        "median": 4.83
+      },
+      "grade_distribution": {
+        "0_neg": 0,
+        "1_weak": 4215,
+        "2_moderate": 10811,
+        "3_strong": 83431
+      },
+      "composite_hscore": 280.5,
+      "pct_positive_2plus": 95.7,
+      "regions": {
+        "Patient_Tissue": {
+          "n_cells": 72993,
+          "grade_distribution": {
+            "0_neg": 0,
+            "1_weak": 2401,
+            "2_moderate": 9187,
+            "3_strong": 61405
+          },
+          "composite_hscore": 280.8,
+          "pct_positive_2plus": 96.7,
+          "thickness_px": {
+            "valid": 72993,
+            "mean": 11.14,
+            "median": 10.0,
+            "std": 4.65
+          }
+        },
+        "Unknown": {
+          "n_cells": 5,
+          "grade_distribution": {
+            "0_neg": 0,
+            "1_weak": 0,
+            "2_moderate": 0,
+            "3_strong": 5
+          },
+          "composite_hscore": 300.0,
+          "pct_positive_2plus": 100.0,
+          "thickness_px": {
+            "valid": 5,
+            "mean": 13.8,
+            "median": 11.0,
+            "std": 6.25
+          }
+        },
+        "iCAP_Control": {
+          "n_cells": 25459,
+          "grade_distribution": {
+            "0_neg": 0,
+            "1_weak": 1814,
+            "2_moderate": 1624,
+            "3_strong": 22021
+          },
+          "composite_hscore": 279.4,
+          "pct_positive_2plus": 92.9,
+          "thickness_px": {
+            "valid": 25459,
+            "mean": 12.69,
+            "median": 12.0,
+            "std": 5.02
+          }
+        }
+      }
+    }
+  }
+}
