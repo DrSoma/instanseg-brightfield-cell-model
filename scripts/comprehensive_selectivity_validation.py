@@ -1711,8 +1711,8 @@ def main() -> None:
         logger.info("GPU: %s", torch.cuda.get_device_name(0))
         logger.info(
             "VRAM: %.1f GB total, %.1f GB free",
-            torch.cuda.get_device_properties(0).total_mem / 1e9,
-            (torch.cuda.get_device_properties(0).total_mem - torch.cuda.memory_allocated(0)) / 1e9,
+            torch.cuda.get_device_properties(0).total_memory / 1e9,
+            (torch.cuda.get_device_properties(0).total_memory - torch.cuda.memory_allocated(0)) / 1e9,
         )
 
     # Determine which tests to run

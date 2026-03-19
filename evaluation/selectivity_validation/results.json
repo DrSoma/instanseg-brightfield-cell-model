@@ -1,0 +1,1348 @@
+{
+  "test1": {
+    "blue_tiles": 10,
+    "dab_tiles": 10,
+    "blue_our_mean": 4.9,
+    "blue_baseline_mean": 113.0,
+    "dab_our_mean": 161.6,
+    "dab_baseline_mean": 278.6,
+    "overlay_dir": "/home/fernandosoto/Documents/instanseg-brightfield-cell-model/evaluation/selectivity_validation/overlays",
+    "per_tile": [
+      {
+        "tile": "tiles/CLDN0216/95744_19712.tiff",
+        "category": "blue",
+        "our_cells": 2,
+        "our_nuclei": 2,
+        "baseline_nuclei": 198
+      },
+      {
+        "tile": "tiles/CLDN0216/88000_15488.tiff",
+        "category": "blue",
+        "our_cells": 0,
+        "our_nuclei": 0,
+        "baseline_nuclei": 86
+      },
+      {
+        "tile": "tiles/CLDN0235/92224_23232.tiff",
+        "category": "blue",
+        "our_cells": 14,
+        "our_nuclei": 14,
+        "baseline_nuclei": 178
+      },
+      {
+        "tile": "tiles/CLDN0235/85888_25344.tiff",
+        "category": "blue",
+        "our_cells": 1,
+        "our_nuclei": 1,
+        "baseline_nuclei": 77
+      },
+      {
+        "tile": "tiles/CLDN0235/92928_25344.tiff",
+        "category": "blue",
+        "our_cells": 10,
+        "our_nuclei": 10,
+        "baseline_nuclei": 123
+      },
+      {
+        "tile": "tiles/CLDN0271/26752_76032.tiff",
+        "category": "blue",
+        "our_cells": 5,
+        "our_nuclei": 4,
+        "baseline_nuclei": 134
+      },
+      {
+        "tile": "tiles/CLDN0271/28864_72512.tiff",
+        "category": "blue",
+        "our_cells": 1,
+        "our_nuclei": 1,
+        "baseline_nuclei": 66
+      },
+      {
+        "tile": "tiles/CLDN0216/100672_16192.tiff",
+        "category": "blue",
+        "our_cells": 3,
+        "our_nuclei": 2,
+        "baseline_nuclei": 100
+      },
+      {
+        "tile": "tiles/CLDN0216/91520_16896.tiff",
+        "category": "blue",
+        "our_cells": 10,
+        "our_nuclei": 10,
+        "baseline_nuclei": 137
+      },
+      {
+        "tile": "tiles/CLDN0216/110528_9856.tiff",
+        "category": "blue",
+        "our_cells": 3,
+        "our_nuclei": 3,
+        "baseline_nuclei": 31
+      },
+      {
+        "tile": "tiles/CLDN0049/20416_12672.tiff",
+        "category": "dab",
+        "our_cells": 196,
+        "our_nuclei": 195,
+        "baseline_nuclei": 278
+      },
+      {
+        "tile": "tiles/CLDN0235/16192_13376.tiff",
+        "category": "dab",
+        "our_cells": 283,
+        "our_nuclei": 272,
+        "baseline_nuclei": 464
+      },
+      {
+        "tile": "tiles/CLDN0049/12672_39424.tiff",
+        "category": "dab",
+        "our_cells": 63,
+        "our_nuclei": 63,
+        "baseline_nuclei": 194
+      },
+      {
+        "tile": "tiles/CLDN0049/9856_13376.tiff",
+        "category": "dab",
+        "our_cells": 163,
+        "our_nuclei": 162,
+        "baseline_nuclei": 308
+      },
+      {
+        "tile": "tiles/CLDN0235/16896_23232.tiff",
+        "category": "dab",
+        "our_cells": 355,
+        "our_nuclei": 345,
+        "baseline_nuclei": 481
+      },
+      {
+        "tile": "tiles/CLDN0049/95744_9856.tiff",
+        "category": "dab",
+        "our_cells": 123,
+        "our_nuclei": 120,
+        "baseline_nuclei": 305
+      },
+      {
+        "tile": "tiles/CLDN0049/26048_19008.tiff",
+        "category": "dab",
+        "our_cells": 113,
+        "our_nuclei": 113,
+        "baseline_nuclei": 179
+      },
+      {
+        "tile": "tiles/CLDN0049/11968_34496.tiff",
+        "category": "dab",
+        "our_cells": 64,
+        "our_nuclei": 64,
+        "baseline_nuclei": 178
+      },
+      {
+        "tile": "tiles/CLDN0049/11968_10560.tiff",
+        "category": "dab",
+        "our_cells": 118,
+        "our_nuclei": 118,
+        "baseline_nuclei": 172
+      },
+      {
+        "tile": "tiles/CLDN0216/14080_23936.tiff",
+        "category": "dab",
+        "our_cells": 138,
+        "our_nuclei": 135,
+        "baseline_nuclei": 227
+      }
+    ]
+  },
+  "test2": {
+    "ring_width_px": 10,
+    "dab_neg_threshold": 0.05,
+    "negative_tiles": 283,
+    "positive_tiles": 198,
+    "negative_cells_measured": 12969,
+    "positive_cells_measured": 38521,
+    "negative_cells_total": 12969,
+    "positive_cells_total": 38521,
+    "neg_membrane_dab_mean": 0.01623631563649396,
+    "neg_membrane_dab_median": 0.014700583745712347,
+    "neg_membrane_dab_std": 0.010222716127368114,
+    "pos_membrane_dab_mean": 0.027920565696342273,
+    "pos_membrane_dab_median": 0.026416626562725577,
+    "pos_membrane_dab_std": 0.012837696008065258,
+    "neg_vs_pos_dab_ratio": 0.5815,
+    "interpretation": "Cells on negative tissue have lower membrane DAB -- model detects real cells but they lack strong DAB staining."
+  },
+  "test3": {
+    "slide": "/home/fernandosoto/Downloads/LungMUHC00183(A2-1)HandE.ndpi",
+    "level_used": 1,
+    "mpp": 0.4595,
+    "tile_size": 512,
+    "n_tiles": 50,
+    "our_mean_cells": 423.0,
+    "our_median_cells": 490.5,
+    "our_zero_tiles": 0,
+    "baseline_mean_nuclei": 590.0,
+    "baseline_median_nuclei": 684.0,
+    "per_tile": [
+      {
+        "tile_idx": 0,
+        "coords_level0": [
+          49024,
+          13440
+        ],
+        "our_cells": 25,
+        "baseline_nuclei": 84,
+        "tissue_fraction": 0.608
+      },
+      {
+        "tile_idx": 1,
+        "coords_level0": [
+          9344,
+          34304
+        ],
+        "our_cells": 808,
+        "baseline_nuclei": 1057,
+        "tissue_fraction": 0.994
+      },
+      {
+        "tile_idx": 2,
+        "coords_level0": [
+          8064,
+          35584
+        ],
+        "our_cells": 508,
+        "baseline_nuclei": 638,
+        "tissue_fraction": 0.813
+      },
+      {
+        "tile_idx": 3,
+        "coords_level0": [
+          65152,
+          17152
+        ],
+        "our_cells": 240,
+        "baseline_nuclei": 393,
+        "tissue_fraction": 0.886
+      },
+      {
+        "tile_idx": 4,
+        "coords_level0": [
+          15744,
+          39808
+        ],
+        "our_cells": 846,
+        "baseline_nuclei": 1094,
+        "tissue_fraction": 0.994
+      },
+      {
+        "tile_idx": 5,
+        "coords_level0": [
+          44544,
+          6400
+        ],
+        "our_cells": 27,
+        "baseline_nuclei": 85,
+        "tissue_fraction": 0.424
+      },
+      {
+        "tile_idx": 6,
+        "coords_level0": [
+          70784,
+          16384
+        ],
+        "our_cells": 4,
+        "baseline_nuclei": 19,
+        "tissue_fraction": 0.407
+      },
+      {
+        "tile_idx": 7,
+        "coords_level0": [
+          12160,
+          41984
+        ],
+        "our_cells": 785,
+        "baseline_nuclei": 1052,
+        "tissue_fraction": 0.99
+      },
+      {
+        "tile_idx": 8,
+        "coords_level0": [
+          22528,
+          32000
+        ],
+        "our_cells": 339,
+        "baseline_nuclei": 516,
+        "tissue_fraction": 0.728
+      },
+      {
+        "tile_idx": 9,
+        "coords_level0": [
+          17024,
+          32256
+        ],
+        "our_cells": 729,
+        "baseline_nuclei": 970,
+        "tissue_fraction": 0.952
+      },
+      {
+        "tile_idx": 10,
+        "coords_level0": [
+          19072,
+          44544
+        ],
+        "our_cells": 745,
+        "baseline_nuclei": 1134,
+        "tissue_fraction": 0.994
+      },
+      {
+        "tile_idx": 11,
+        "coords_level0": [
+          78464,
+          12672
+        ],
+        "our_cells": 137,
+        "baseline_nuclei": 207,
+        "tissue_fraction": 0.313
+      },
+      {
+        "tile_idx": 12,
+        "coords_level0": [
+          16000,
+          41472
+        ],
+        "our_cells": 752,
+        "baseline_nuclei": 1005,
+        "tissue_fraction": 0.982
+      },
+      {
+        "tile_idx": 13,
+        "coords_level0": [
+          49280,
+          14464
+        ],
+        "our_cells": 218,
+        "baseline_nuclei": 345,
+        "tissue_fraction": 0.64
+      },
+      {
+        "tile_idx": 14,
+        "coords_level0": [
+          16128,
+          32768
+        ],
+        "our_cells": 781,
+        "baseline_nuclei": 1011,
+        "tissue_fraction": 0.976
+      },
+      {
+        "tile_idx": 15,
+        "coords_level0": [
+          49024,
+          14080
+        ],
+        "our_cells": 37,
+        "baseline_nuclei": 101,
+        "tissue_fraction": 0.532
+      },
+      {
+        "tile_idx": 16,
+        "coords_level0": [
+          13440,
+          42112
+        ],
+        "our_cells": 635,
+        "baseline_nuclei": 743,
+        "tissue_fraction": 0.982
+      },
+      {
+        "tile_idx": 17,
+        "coords_level0": [
+          16384,
+          36608
+        ],
+        "our_cells": 756,
+        "baseline_nuclei": 920,
+        "tissue_fraction": 0.987
+      },
+      {
+        "tile_idx": 18,
+        "coords_level0": [
+          31488,
+          39936
+        ],
+        "our_cells": 38,
+        "baseline_nuclei": 69,
+        "tissue_fraction": 0.536
+      },
+      {
+        "tile_idx": 19,
+        "coords_level0": [
+          10624,
+          39424
+        ],
+        "our_cells": 671,
+        "baseline_nuclei": 891,
+        "tissue_fraction": 0.997
+      },
+      {
+        "tile_idx": 20,
+        "coords_level0": [
+          16640,
+          38656
+        ],
+        "our_cells": 829,
+        "baseline_nuclei": 1041,
+        "tissue_fraction": 0.994
+      },
+      {
+        "tile_idx": 21,
+        "coords_level0": [
+          20224,
+          43136
+        ],
+        "our_cells": 498,
+        "baseline_nuclei": 871,
+        "tissue_fraction": 0.994
+      },
+      {
+        "tile_idx": 22,
+        "coords_level0": [
+          15360,
+          31872
+        ],
+        "our_cells": 688,
+        "baseline_nuclei": 884,
+        "tissue_fraction": 0.975
+      },
+      {
+        "tile_idx": 23,
+        "coords_level0": [
+          16000,
+          38912
+        ],
+        "our_cells": 832,
+        "baseline_nuclei": 1055,
+        "tissue_fraction": 0.99
+      },
+      {
+        "tile_idx": 24,
+        "coords_level0": [
+          64000,
+          18048
+        ],
+        "our_cells": 153,
+        "baseline_nuclei": 220,
+        "tissue_fraction": 0.479
+      },
+      {
+        "tile_idx": 25,
+        "coords_level0": [
+          26624,
+          25600
+        ],
+        "our_cells": 12,
+        "baseline_nuclei": 17,
+        "tissue_fraction": 0.311
+      },
+      {
+        "tile_idx": 26,
+        "coords_level0": [
+          10880,
+          29952
+        ],
+        "our_cells": 437,
+        "baseline_nuclei": 586,
+        "tissue_fraction": 0.512
+      },
+      {
+        "tile_idx": 27,
+        "coords_level0": [
+          40192,
+          27136
+        ],
+        "our_cells": 151,
+        "baseline_nuclei": 491,
+        "tissue_fraction": 0.902
+      },
+      {
+        "tile_idx": 28,
+        "coords_level0": [
+          22272,
+          39168
+        ],
+        "our_cells": 692,
+        "baseline_nuclei": 1028,
+        "tissue_fraction": 0.971
+      },
+      {
+        "tile_idx": 29,
+        "coords_level0": [
+          69376,
+          13184
+        ],
+        "our_cells": 279,
+        "baseline_nuclei": 497,
+        "tissue_fraction": 0.87
+      },
+      {
+        "tile_idx": 30,
+        "coords_level0": [
+          22272,
+          40960
+        ],
+        "our_cells": 645,
+        "baseline_nuclei": 958,
+        "tissue_fraction": 0.968
+      },
+      {
+        "tile_idx": 31,
+        "coords_level0": [
+          64384,
+          24448
+        ],
+        "our_cells": 7,
+        "baseline_nuclei": 32,
+        "tissue_fraction": 0.407
+      },
+      {
+        "tile_idx": 32,
+        "coords_level0": [
+          19456,
+          35328
+        ],
+        "our_cells": 785,
+        "baseline_nuclei": 1027,
+        "tissue_fraction": 0.986
+      },
+      {
+        "tile_idx": 33,
+        "coords_level0": [
+          11776,
+          40320
+        ],
+        "our_cells": 483,
+        "baseline_nuclei": 730,
+        "tissue_fraction": 0.991
+      },
+      {
+        "tile_idx": 34,
+        "coords_level0": [
+          36864,
+          24192
+        ],
+        "our_cells": 7,
+        "baseline_nuclei": 28,
+        "tissue_fraction": 0.31
+      },
+      {
+        "tile_idx": 35,
+        "coords_level0": [
+          40448,
+          13952
+        ],
+        "our_cells": 40,
+        "baseline_nuclei": 93,
+        "tissue_fraction": 0.608
+      },
+      {
+        "tile_idx": 36,
+        "coords_level0": [
+          11520,
+          35712
+        ],
+        "our_cells": 726,
+        "baseline_nuclei": 880,
+        "tissue_fraction": 0.996
+      },
+      {
+        "tile_idx": 37,
+        "coords_level0": [
+          46720,
+          16896
+        ],
+        "our_cells": 292,
+        "baseline_nuclei": 440,
+        "tissue_fraction": 0.544
+      },
+      {
+        "tile_idx": 38,
+        "coords_level0": [
+          15616,
+          33536
+        ],
+        "our_cells": 703,
+        "baseline_nuclei": 922,
+        "tissue_fraction": 0.994
+      },
+      {
+        "tile_idx": 39,
+        "coords_level0": [
+          75136,
+          13696
+        ],
+        "our_cells": 8,
+        "baseline_nuclei": 21,
+        "tissue_fraction": 0.309
+      },
+      {
+        "tile_idx": 40,
+        "coords_level0": [
+          10752,
+          38400
+        ],
+        "our_cells": 697,
+        "baseline_nuclei": 903,
+        "tissue_fraction": 0.996
+      },
+      {
+        "tile_idx": 41,
+        "coords_level0": [
+          29440,
+          38528
+        ],
+        "our_cells": 32,
+        "baseline_nuclei": 117,
+        "tissue_fraction": 0.755
+      },
+      {
+        "tile_idx": 42,
+        "coords_level0": [
+          36992,
+          25600
+        ],
+        "our_cells": 9,
+        "baseline_nuclei": 28,
+        "tissue_fraction": 0.405
+      },
+      {
+        "tile_idx": 43,
+        "coords_level0": [
+          10752,
+          44032
+        ],
+        "our_cells": 20,
+        "baseline_nuclei": 52,
+        "tissue_fraction": 0.423
+      },
+      {
+        "tile_idx": 44,
+        "coords_level0": [
+          12672,
+          37248
+        ],
+        "our_cells": 648,
+        "baseline_nuclei": 868,
+        "tissue_fraction": 0.996
+      },
+      {
+        "tile_idx": 45,
+        "coords_level0": [
+          70784,
+          18176
+        ],
+        "our_cells": 21,
+        "baseline_nuclei": 47,
+        "tissue_fraction": 0.399
+      },
+      {
+        "tile_idx": 46,
+        "coords_level0": [
+          22144,
+          38528
+        ],
+        "our_cells": 635,
+        "baseline_nuclei": 943,
+        "tissue_fraction": 0.919
+      },
+      {
+        "tile_idx": 47,
+        "coords_level0": [
+          16768,
+          32512
+        ],
+        "our_cells": 761,
+        "baseline_nuclei": 998,
+        "tissue_fraction": 0.981
+      },
+      {
+        "tile_idx": 48,
+        "coords_level0": [
+          22656,
+          38912
+        ],
+        "our_cells": 743,
+        "baseline_nuclei": 1115,
+        "tissue_fraction": 0.971
+      },
+      {
+        "tile_idx": 49,
+        "coords_level0": [
+          46464,
+          24320
+        ],
+        "our_cells": 236,
+        "baseline_nuclei": 274,
+        "tissue_fraction": 0.674
+      }
+    ],
+    "ratio": 0.7169,
+    "verdict": "NOT DAB-SELECTIVE (detects H&E cells freely)"
+  },
+  "test4": {
+    "match_distance_px": 10.0,
+    "total_our_cells": 49,
+    "total_matched": 43,
+    "overall_match_pct": 87.8,
+    "per_tile": [
+      {
+        "tile": "tiles/CLDN0216/95744_19712.tiff",
+        "our_cells": 2,
+        "baseline_nuclei": 198,
+        "matched": 2,
+        "match_pct": 100.0
+      },
+      {
+        "tile": "tiles/CLDN0216/88000_15488.tiff",
+        "our_cells": 0,
+        "baseline_nuclei": 86,
+        "matched": 0,
+        "match_pct": 0.0
+      },
+      {
+        "tile": "tiles/CLDN0235/92224_23232.tiff",
+        "our_cells": 14,
+        "baseline_nuclei": 178,
+        "matched": 13,
+        "match_pct": 92.9
+      },
+      {
+        "tile": "tiles/CLDN0235/85888_25344.tiff",
+        "our_cells": 1,
+        "baseline_nuclei": 77,
+        "matched": 0,
+        "match_pct": 0.0
+      },
+      {
+        "tile": "tiles/CLDN0235/92928_25344.tiff",
+        "our_cells": 10,
+        "baseline_nuclei": 123,
+        "matched": 8,
+        "match_pct": 80.0
+      },
+      {
+        "tile": "tiles/CLDN0271/26752_76032.tiff",
+        "our_cells": 5,
+        "baseline_nuclei": 134,
+        "matched": 5,
+        "match_pct": 100.0
+      },
+      {
+        "tile": "tiles/CLDN0271/28864_72512.tiff",
+        "our_cells": 1,
+        "baseline_nuclei": 66,
+        "matched": 1,
+        "match_pct": 100.0
+      },
+      {
+        "tile": "tiles/CLDN0216/100672_16192.tiff",
+        "our_cells": 3,
+        "baseline_nuclei": 100,
+        "matched": 2,
+        "match_pct": 66.7
+      },
+      {
+        "tile": "tiles/CLDN0216/91520_16896.tiff",
+        "our_cells": 10,
+        "baseline_nuclei": 137,
+        "matched": 9,
+        "match_pct": 90.0
+      },
+      {
+        "tile": "tiles/CLDN0216/110528_9856.tiff",
+        "our_cells": 3,
+        "baseline_nuclei": 31,
+        "matched": 3,
+        "match_pct": 100.0
+      }
+    ],
+    "interpretation": "High match rate: our model detects the same real cells that the baseline nuclei model finds."
+  },
+  "test5": {
+    "n_tiles": 20,
+    "embedding_dim": 2560,
+    "epithelial_cluster": 0,
+    "cluster_dab_means": {
+      "cluster_0": 0.0978,
+      "cluster_1": 0.0164
+    },
+    "blue_tiles_in_epithelial_cluster": 0,
+    "blue_tiles_total": 10,
+    "blue_epi_tile_pct": 0.0,
+    "blue_cells_in_epi": 0,
+    "blue_cells_total": 49,
+    "blue_cells_epi_pct": 0.0,
+    "per_tile": [
+      {
+        "tile": "tiles/CLDN0216/95744_19712.tiff",
+        "category": "blue",
+        "cluster": 1,
+        "is_epithelial": "False",
+        "dab_mean": 0.0,
+        "cell_count": 2
+      },
+      {
+        "tile": "tiles/CLDN0216/88000_15488.tiff",
+        "category": "blue",
+        "cluster": 1,
+        "is_epithelial": "False",
+        "dab_mean": 0.0,
+        "cell_count": 0
+      },
+      {
+        "tile": "tiles/CLDN0235/92224_23232.tiff",
+        "category": "blue",
+        "cluster": 1,
+        "is_epithelial": "False",
+        "dab_mean": 0.0,
+        "cell_count": 14
+      },
+      {
+        "tile": "tiles/CLDN0235/85888_25344.tiff",
+        "category": "blue",
+        "cluster": 1,
+        "is_epithelial": "False",
+        "dab_mean": 0.0,
+        "cell_count": 1
+      },
+      {
+        "tile": "tiles/CLDN0235/92928_25344.tiff",
+        "category": "blue",
+        "cluster": 1,
+        "is_epithelial": "False",
+        "dab_mean": 0.0,
+        "cell_count": 10
+      },
+      {
+        "tile": "tiles/CLDN0271/26752_76032.tiff",
+        "category": "blue",
+        "cluster": 1,
+        "is_epithelial": "False",
+        "dab_mean": 0.0,
+        "cell_count": 5
+      },
+      {
+        "tile": "tiles/CLDN0271/28864_72512.tiff",
+        "category": "blue",
+        "cluster": 1,
+        "is_epithelial": "False",
+        "dab_mean": 0.0,
+        "cell_count": 1
+      },
+      {
+        "tile": "tiles/CLDN0216/100672_16192.tiff",
+        "category": "blue",
+        "cluster": 1,
+        "is_epithelial": "False",
+        "dab_mean": 0.0001,
+        "cell_count": 3
+      },
+      {
+        "tile": "tiles/CLDN0216/91520_16896.tiff",
+        "category": "blue",
+        "cluster": 1,
+        "is_epithelial": "False",
+        "dab_mean": 0.0001,
+        "cell_count": 10
+      },
+      {
+        "tile": "tiles/CLDN0216/110528_9856.tiff",
+        "category": "blue",
+        "cluster": 1,
+        "is_epithelial": "False",
+        "dab_mean": 0.0001,
+        "cell_count": 3
+      },
+      {
+        "tile": "tiles/CLDN0049/20416_12672.tiff",
+        "category": "dab",
+        "cluster": 0,
+        "is_epithelial": "True",
+        "dab_mean": 0.1035,
+        "cell_count": 196
+      },
+      {
+        "tile": "tiles/CLDN0235/16192_13376.tiff",
+        "category": "dab",
+        "cluster": 0,
+        "is_epithelial": "True",
+        "dab_mean": 0.1021,
+        "cell_count": 283
+      },
+      {
+        "tile": "tiles/CLDN0049/12672_39424.tiff",
+        "category": "dab",
+        "cluster": 1,
+        "is_epithelial": "False",
+        "dab_mean": 0.1018,
+        "cell_count": 63
+      },
+      {
+        "tile": "tiles/CLDN0049/9856_13376.tiff",
+        "category": "dab",
+        "cluster": 0,
+        "is_epithelial": "True",
+        "dab_mean": 0.1002,
+        "cell_count": 163
+      },
+      {
+        "tile": "tiles/CLDN0235/16896_23232.tiff",
+        "category": "dab",
+        "cluster": 0,
+        "is_epithelial": "True",
+        "dab_mean": 0.098,
+        "cell_count": 355
+      },
+      {
+        "tile": "tiles/CLDN0049/95744_9856.tiff",
+        "category": "dab",
+        "cluster": 0,
+        "is_epithelial": "True",
+        "dab_mean": 0.0957,
+        "cell_count": 123
+      },
+      {
+        "tile": "tiles/CLDN0049/26048_19008.tiff",
+        "category": "dab",
+        "cluster": 0,
+        "is_epithelial": "True",
+        "dab_mean": 0.0954,
+        "cell_count": 113
+      },
+      {
+        "tile": "tiles/CLDN0049/11968_34496.tiff",
+        "category": "dab",
+        "cluster": 1,
+        "is_epithelial": "False",
+        "dab_mean": 0.095,
+        "cell_count": 64
+      },
+      {
+        "tile": "tiles/CLDN0049/11968_10560.tiff",
+        "category": "dab",
+        "cluster": 0,
+        "is_epithelial": "True",
+        "dab_mean": 0.0938,
+        "cell_count": 118
+      },
+      {
+        "tile": "tiles/CLDN0216/14080_23936.tiff",
+        "category": "dab",
+        "cluster": 0,
+        "is_epithelial": "True",
+        "dab_mean": 0.0935,
+        "cell_count": 138
+      }
+    ]
+  },
+  "test6": {
+    "blue_tiles": 10,
+    "dab_tiles": 10,
+    "blue": {
+      "our": {
+        "mean": 4.9,
+        "median": 3.0,
+        "total": 49
+      },
+      "baseline": {
+        "mean": 113.0,
+        "median": 111.5,
+        "total": 1130
+      },
+      "fluoro": {
+        "mean": 321.9,
+        "median": 320.0,
+        "total": 3219
+      }
+    },
+    "dab": {
+      "our": {
+        "mean": 161.6,
+        "median": 130.5,
+        "total": 1616
+      },
+      "baseline": {
+        "mean": 278.6,
+        "median": 252.5,
+        "total": 2786
+      },
+      "fluoro": {
+        "mean": 278.8,
+        "median": 227.0,
+        "total": 2788
+      }
+    },
+    "per_tile": [
+      {
+        "tile": "tiles/CLDN0216/95744_19712.tiff",
+        "category": "blue",
+        "our_cells": 2,
+        "baseline_nuclei": 198,
+        "fluoro_cells": 484
+      },
+      {
+        "tile": "tiles/CLDN0216/88000_15488.tiff",
+        "category": "blue",
+        "our_cells": 0,
+        "baseline_nuclei": 86,
+        "fluoro_cells": 486
+      },
+      {
+        "tile": "tiles/CLDN0235/92224_23232.tiff",
+        "category": "blue",
+        "our_cells": 14,
+        "baseline_nuclei": 178,
+        "fluoro_cells": 376
+      },
+      {
+        "tile": "tiles/CLDN0235/85888_25344.tiff",
+        "category": "blue",
+        "our_cells": 1,
+        "baseline_nuclei": 77,
+        "fluoro_cells": 150
+      },
+      {
+        "tile": "tiles/CLDN0235/92928_25344.tiff",
+        "category": "blue",
+        "our_cells": 10,
+        "baseline_nuclei": 123,
+        "fluoro_cells": 246
+      },
+      {
+        "tile": "tiles/CLDN0271/26752_76032.tiff",
+        "category": "blue",
+        "our_cells": 5,
+        "baseline_nuclei": 134,
+        "fluoro_cells": 233
+      },
+      {
+        "tile": "tiles/CLDN0271/28864_72512.tiff",
+        "category": "blue",
+        "our_cells": 1,
+        "baseline_nuclei": 66,
+        "fluoro_cells": 304
+      },
+      {
+        "tile": "tiles/CLDN0216/100672_16192.tiff",
+        "category": "blue",
+        "our_cells": 3,
+        "baseline_nuclei": 100,
+        "fluoro_cells": 336
+      },
+      {
+        "tile": "tiles/CLDN0216/91520_16896.tiff",
+        "category": "blue",
+        "our_cells": 10,
+        "baseline_nuclei": 137,
+        "fluoro_cells": 430
+      },
+      {
+        "tile": "tiles/CLDN0216/110528_9856.tiff",
+        "category": "blue",
+        "our_cells": 3,
+        "baseline_nuclei": 31,
+        "fluoro_cells": 174
+      },
+      {
+        "tile": "tiles/CLDN0049/20416_12672.tiff",
+        "category": "dab",
+        "our_cells": 196,
+        "baseline_nuclei": 278,
+        "fluoro_cells": 270
+      },
+      {
+        "tile": "tiles/CLDN0235/16192_13376.tiff",
+        "category": "dab",
+        "our_cells": 283,
+        "baseline_nuclei": 464,
+        "fluoro_cells": 458
+      },
+      {
+        "tile": "tiles/CLDN0049/12672_39424.tiff",
+        "category": "dab",
+        "our_cells": 63,
+        "baseline_nuclei": 194,
+        "fluoro_cells": 161
+      },
+      {
+        "tile": "tiles/CLDN0049/9856_13376.tiff",
+        "category": "dab",
+        "our_cells": 163,
+        "baseline_nuclei": 308,
+        "fluoro_cells": 346
+      },
+      {
+        "tile": "tiles/CLDN0235/16896_23232.tiff",
+        "category": "dab",
+        "our_cells": 355,
+        "baseline_nuclei": 481,
+        "fluoro_cells": 588
+      },
+      {
+        "tile": "tiles/CLDN0049/95744_9856.tiff",
+        "category": "dab",
+        "our_cells": 123,
+        "baseline_nuclei": 305,
+        "fluoro_cells": 174
+      },
+      {
+        "tile": "tiles/CLDN0049/26048_19008.tiff",
+        "category": "dab",
+        "our_cells": 113,
+        "baseline_nuclei": 179,
+        "fluoro_cells": 177
+      },
+      {
+        "tile": "tiles/CLDN0049/11968_34496.tiff",
+        "category": "dab",
+        "our_cells": 64,
+        "baseline_nuclei": 178,
+        "fluoro_cells": 133
+      },
+      {
+        "tile": "tiles/CLDN0049/11968_10560.tiff",
+        "category": "dab",
+        "our_cells": 118,
+        "baseline_nuclei": 172,
+        "fluoro_cells": 184
+      },
+      {
+        "tile": "tiles/CLDN0216/14080_23936.tiff",
+        "category": "dab",
+        "our_cells": 138,
+        "baseline_nuclei": 227,
+        "fluoro_cells": 297
+      }
+    ],
+    "blue_our_vs_fluoro_ratio": 0.0152,
+    "fluoro_validates_real_cells": true,
+    "interpretation": "Fluorescence model detects 322 cells/tile on blue tissue (vs baseline 113 nuclei), confirming real cells exist. Our model detects 5 (1.5% of fluorescence)."
+  },
+  "test7": {
+    "n_tiles": 10,
+    "tiles_with_gt_nuclei": 10,
+    "tiles_with_gt_cells": 10,
+    "tiles_with_our_detections": 9,
+    "tiles_gt_zero_our_nonzero": 0,
+    "per_tile": [
+      {
+        "tile": "tiles/CLDN0216/95744_19712.tiff",
+        "gt_nuclei": 124,
+        "gt_cells": 351,
+        "our_cells": 2,
+        "gt_nuc_path": "/home/fernandosoto/Documents/instanseg-brightfield-cell-model/data/masks/CLDN0216/95744_19712_nuclei.tiff",
+        "gt_cell_path": "/home/fernandosoto/Documents/instanseg-brightfield-cell-model/data/teacher_predictions/consensus/CLDN0216/95744_19712_cells.tiff",
+        "in_dataset": true
+      },
+      {
+        "tile": "tiles/CLDN0216/88000_15488.tiff",
+        "gt_nuclei": 21,
+        "gt_cells": 332,
+        "our_cells": 0,
+        "gt_nuc_path": "/home/fernandosoto/Documents/instanseg-brightfield-cell-model/data/masks/CLDN0216/88000_15488_nuclei.tiff",
+        "gt_cell_path": "/home/fernandosoto/Documents/instanseg-brightfield-cell-model/data/teacher_predictions/consensus/CLDN0216/88000_15488_cells.tiff",
+        "in_dataset": true
+      },
+      {
+        "tile": "tiles/CLDN0235/92224_23232.tiff",
+        "gt_nuclei": 60,
+        "gt_cells": 46,
+        "our_cells": 14,
+        "gt_nuc_path": "/home/fernandosoto/Documents/instanseg-brightfield-cell-model/data/masks/CLDN0235/92224_23232_nuclei.tiff",
+        "gt_cell_path": "/home/fernandosoto/Documents/instanseg-brightfield-cell-model/data/teacher_predictions/consensus/CLDN0235/92224_23232_cells.tiff",
+        "in_dataset": true
+      },
+      {
+        "tile": "tiles/CLDN0235/85888_25344.tiff",
+        "gt_nuclei": 14,
+        "gt_cells": 20,
+        "our_cells": 1,
+        "gt_nuc_path": "/home/fernandosoto/Documents/instanseg-brightfield-cell-model/data/masks/CLDN0235/85888_25344_nuclei.tiff",
+        "gt_cell_path": "/home/fernandosoto/Documents/instanseg-brightfield-cell-model/data/teacher_predictions/consensus/CLDN0235/85888_25344_cells.tiff",
+        "in_dataset": true
+      },
+      {
+        "tile": "tiles/CLDN0235/92928_25344.tiff",
+        "gt_nuclei": 39,
+        "gt_cells": 81,
+        "our_cells": 10,
+        "gt_nuc_path": "/home/fernandosoto/Documents/instanseg-brightfield-cell-model/data/masks/CLDN0235/92928_25344_nuclei.tiff",
+        "gt_cell_path": "/home/fernandosoto/Documents/instanseg-brightfield-cell-model/data/teacher_predictions/consensus/CLDN0235/92928_25344_cells.tiff",
+        "in_dataset": true
+      },
+      {
+        "tile": "tiles/CLDN0271/26752_76032.tiff",
+        "gt_nuclei": 70,
+        "gt_cells": 3,
+        "our_cells": 5,
+        "gt_nuc_path": "/home/fernandosoto/Documents/instanseg-brightfield-cell-model/data/masks/CLDN0271/26752_76032_nuclei.tiff",
+        "gt_cell_path": "/home/fernandosoto/Documents/instanseg-brightfield-cell-model/data/teacher_predictions/consensus/CLDN0271/26752_76032_cells.tiff",
+        "in_dataset": true
+      },
+      {
+        "tile": "tiles/CLDN0271/28864_72512.tiff",
+        "gt_nuclei": 7,
+        "gt_cells": 2,
+        "our_cells": 1,
+        "gt_nuc_path": "/home/fernandosoto/Documents/instanseg-brightfield-cell-model/data/masks/CLDN0271/28864_72512_nuclei.tiff",
+        "gt_cell_path": "/home/fernandosoto/Documents/instanseg-brightfield-cell-model/data/teacher_predictions/consensus/CLDN0271/28864_72512_cells.tiff",
+        "in_dataset": true
+      },
+      {
+        "tile": "tiles/CLDN0216/100672_16192.tiff",
+        "gt_nuclei": 16,
+        "gt_cells": 80,
+        "our_cells": 3,
+        "gt_nuc_path": "/home/fernandosoto/Documents/instanseg-brightfield-cell-model/data/masks/CLDN0216/100672_16192_nuclei.tiff",
+        "gt_cell_path": "/home/fernandosoto/Documents/instanseg-brightfield-cell-model/data/teacher_predictions/consensus/CLDN0216/100672_16192_cells.tiff",
+        "in_dataset": true
+      },
+      {
+        "tile": "tiles/CLDN0216/91520_16896.tiff",
+        "gt_nuclei": 29,
+        "gt_cells": 105,
+        "our_cells": 10,
+        "gt_nuc_path": "/home/fernandosoto/Documents/instanseg-brightfield-cell-model/data/masks/CLDN0216/91520_16896_nuclei.tiff",
+        "gt_cell_path": "/home/fernandosoto/Documents/instanseg-brightfield-cell-model/data/teacher_predictions/consensus/CLDN0216/91520_16896_cells.tiff",
+        "in_dataset": true
+      },
+      {
+        "tile": "tiles/CLDN0216/110528_9856.tiff",
+        "gt_nuclei": 8,
+        "gt_cells": 101,
+        "our_cells": 3,
+        "gt_nuc_path": "/home/fernandosoto/Documents/instanseg-brightfield-cell-model/data/masks/CLDN0216/110528_9856_nuclei.tiff",
+        "gt_cell_path": "/home/fernandosoto/Documents/instanseg-brightfield-cell-model/data/teacher_predictions/consensus/CLDN0216/110528_9856_cells.tiff",
+        "in_dataset": true
+      }
+    ],
+    "interpretation": "GT masks have labels on 10 (nuclei) / 10 (cells) of the blue tiles. These tiles had training signal and may not be truly negative."
+  },
+  "test8": {
+    "heatmap_dir": "/home/fernandosoto/Documents/instanseg-brightfield-cell-model/evaluation/selectivity_validation/heatmaps",
+    "n_heatmaps": 10,
+    "panels": [
+      "A: Original RGB",
+      "B: DAB channel (stain deconvolution)",
+      "C: Cell seed confidence map (raw FCN channel 9)",
+      "D: Cell boundary probability map (raw FCN channels 5-8 mean)",
+      "E: Bar-filter response overlaid on RGB",
+      "F: Final cell boundaries overlaid on RGB"
+    ],
+    "per_tile": [
+      {
+        "tile": "tiles/CLDN0216/95744_19712.tiff",
+        "category": "blue",
+        "cells": 2,
+        "dab_mean": 0.0004,
+        "saved_as": "heatmap_blue_CLDN0216_95744_19712.png"
+      },
+      {
+        "tile": "tiles/CLDN0216/88000_15488.tiff",
+        "category": "blue",
+        "cells": 0,
+        "dab_mean": 0.0002,
+        "saved_as": "heatmap_blue_CLDN0216_88000_15488.png"
+      },
+      {
+        "tile": "tiles/CLDN0235/92224_23232.tiff",
+        "category": "blue",
+        "cells": 14,
+        "dab_mean": 0.0003,
+        "saved_as": "heatmap_blue_CLDN0235_92224_23232.png"
+      },
+      {
+        "tile": "tiles/CLDN0235/85888_25344.tiff",
+        "category": "blue",
+        "cells": 1,
+        "dab_mean": 0.0024,
+        "saved_as": "heatmap_blue_CLDN0235_85888_25344.png"
+      },
+      {
+        "tile": "tiles/CLDN0235/92928_25344.tiff",
+        "category": "blue",
+        "cells": 10,
+        "dab_mean": 0.0004,
+        "saved_as": "heatmap_blue_CLDN0235_92928_25344.png"
+      },
+      {
+        "tile": "tiles/CLDN0049/20416_12672.tiff",
+        "category": "dab",
+        "cells": 196,
+        "dab_mean": 0.0186,
+        "saved_as": "heatmap_dab_CLDN0049_20416_12672.png"
+      },
+      {
+        "tile": "tiles/CLDN0235/16192_13376.tiff",
+        "category": "dab",
+        "cells": 283,
+        "dab_mean": 0.0284,
+        "saved_as": "heatmap_dab_CLDN0235_16192_13376.png"
+      },
+      {
+        "tile": "tiles/CLDN0049/12672_39424.tiff",
+        "category": "dab",
+        "cells": 63,
+        "dab_mean": 0.0182,
+        "saved_as": "heatmap_dab_CLDN0049_12672_39424.png"
+      },
+      {
+        "tile": "tiles/CLDN0049/9856_13376.tiff",
+        "category": "dab",
+        "cells": 163,
+        "dab_mean": 0.0233,
+        "saved_as": "heatmap_dab_CLDN0049_9856_13376.png"
+      },
+      {
+        "tile": "tiles/CLDN0235/16896_23232.tiff",
+        "category": "dab",
+        "cells": 355,
+        "dab_mean": 0.0306,
+        "saved_as": "heatmap_dab_CLDN0235_16896_23232.png"
+      }
+    ]
+  },
+  "metadata": {
+    "tests_run": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "elapsed_seconds": 286.0,
+    "device": "cuda",
+    "blue_tiles": [
+      "tiles/CLDN0216/95744_19712.tiff",
+      "tiles/CLDN0216/88000_15488.tiff",
+      "tiles/CLDN0235/92224_23232.tiff",
+      "tiles/CLDN0235/85888_25344.tiff",
+      "tiles/CLDN0235/92928_25344.tiff",
+      "tiles/CLDN0271/26752_76032.tiff",
+      "tiles/CLDN0271/28864_72512.tiff",
+      "tiles/CLDN0216/100672_16192.tiff",
+      "tiles/CLDN0216/91520_16896.tiff",
+      "tiles/CLDN0216/110528_9856.tiff"
+    ],
+    "high_dab_tiles": [
+      "tiles/CLDN0049/20416_12672.tiff",
+      "tiles/CLDN0235/16192_13376.tiff",
+      "tiles/CLDN0049/12672_39424.tiff",
+      "tiles/CLDN0049/9856_13376.tiff",
+      "tiles/CLDN0235/16896_23232.tiff",
+      "tiles/CLDN0049/95744_9856.tiff",
+      "tiles/CLDN0049/26048_19008.tiff",
+      "tiles/CLDN0049/11968_34496.tiff",
+      "tiles/CLDN0049/11968_10560.tiff",
+      "tiles/CLDN0216/14080_23936.tiff"
+    ]
+  }
+}
