@@ -1,0 +1,11 @@
+{
+  "teachers": [
+    "instanseg_fluoro",
+    "cellpose"
+  ],
+  "tiles": 500,
+  "cells_per_teacher": {
+    "instanseg_fluoro": 179407,
+    "cellpose": 99687
+  }
+}

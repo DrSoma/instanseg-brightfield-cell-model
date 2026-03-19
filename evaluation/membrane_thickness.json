@@ -1,0 +1,16 @@
+{
+  "n_profiles": 17708,
+  "membrane_width_px": {
+    "mean": 10.032979444318952,
+    "median": 10.0,
+    "std": 4.096756831342886,
+    "p25": 7.0,
+    "p75": 13.0
+  },
+  "peak_from_edge_px": {
+    "mean": 3.8361192681274,
+    "median": 4.0
+  },
+  "recommended_shrink_px": 10,
+  "recommended_shrink_um": 5.0
+}

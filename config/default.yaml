@@ -1,0 +1,99 @@
+# Central configuration for the brightfield InstanSeg training pipeline.
+# Every script loads this as its single source of truth.
+# Paths can be overridden via environment variables (see .env.example).
+
+paths:
+  slide_dir: ${SLIDE_DIR:=/media/fernandosoto/DATA/CLDN18 slides}
+  data_dir: ${DATA_DIR:=./data}
+  model_dir: ${MODEL_DIR:=./models}
+  evaluation_dir: ${EVALUATION_DIR:=./evaluation}
+
+tile_extraction:
+  tile_size: 512               # pixels at target resolution
+  target_mpp: 0.5              # microns per pixel (InstanSeg standard)
+  padding: 80                  # pixels of overlap on each side for dedup
+  min_tissue_fraction: 0.05    # minimum tissue % to keep a tile
+  brightness_threshold: 235    # raised from 220 for IHC (v3.5 fix)
+  slides_to_use: 200           # use ALL available slides
+  tiles_per_slide: 400         # target tiles per slide (~10k total)
+
+stain_deconvolution:
+  # Calibrated vectors for CLDN18 slides (scanner-specific)
+  hematoxylin: [0.786, 0.593, 0.174]
+  dab: [0.215, 0.422, 0.881]
+  residual: [0.547, -0.799, 0.249]
+  # Standard H-DAB vectors (QuPath/Orion defaults) as fallback
+  standard_hematoxylin: [0.650, 0.704, 0.286]
+  standard_dab: [0.268, 0.570, 0.776]
+  standard_residual: [0.711, 0.424, 0.562]
+
+dab_thresholding:
+  method: otsu_per_slide       # 'otsu_per_slide' or 'fixed'
+  fixed_threshold: 0.15        # used only if method='fixed'
+  morphology_closing_size: 5   # kernel size for closing gaps in membrane
+  morphology_thinning: true    # thin to ~1px-wide boundaries
+
+nucleus_detection:
+  model_name: brightfield_nuclei
+  device: cuda
+  batch_size: 256              # A6000 48GB can handle it — VRAM-aware sizer will cap if needed
+  use_amp: true                # mixed precision inference
+
+watershed:
+  compactness: 0.0             # 0 = standard watershed, >0 = compact
+  max_cell_radius_um: 30.0     # max distance from nucleus to cell boundary
+  min_cell_area_px: 50         # minimum cell area in pixels
+  distance_sigma: 1.0          # Gaussian sigma for distance transform smoothing
+
+quality_filter:
+  max_cell_nucleus_ratio: 5.0  # cell area / nucleus area upper bound
+  min_membrane_coverage: 0.3   # permissive — branches E/F filter in Python
+  min_nucleus_area_px: 20      # nuclei smaller than this are artifacts
+  max_nucleus_area_px: 5000    # nuclei larger than this are artifacts
+
+dataset:
+  parent_dataset: cldn18_brightfield
+  image_modality: Brightfield
+  train_fraction: 0.70
+  val_fraction: 0.15
+  test_fraction: 0.15
+  split_by: slide              # 'slide' to avoid data leakage
+
+training:
+  target_segmentation: NC      # N=nuclei, C=cells, NC=both
+  augmentation_type: brightfield_only
+  layers: [32, 64, 128, 256]
+  n_sigma: 2
+  dim_coords: 2
+  dim_seeds: 1
+  dim_in: 3
+  norm: BATCH
+  binary_loss_fn: lovasz_hinge
+  seed_loss_fn: l1_distance
+  hotstart_epochs: 10
+  learning_rate: 0.0001
+  batch_size: 4
+  num_epochs: 200
+  gradient_clip: 20.0
+  mlp_width: 5
+  window_size: 128
+  experiment_name: brightfield_cells_nuclei
+  use_amp: true
+  num_workers: 2              # each worker caches ~25GB — keep low to avoid OOM
+  seed: 42
+
+postprocessing:
+  seed_threshold: 0.7
+  mask_threshold: 0.53
+  peak_distance: 5
+  overlap_threshold: 0.3
+  window_size: 32
+  cleanup_fragments: true
+
+evaluation:
+  iou_thresholds: [0.5, 0.75]
+  num_pathologist_tiles: 50
+
+export:
+  torchscript: true
+  bioimageio: false

@@ -1,0 +1,21 @@
+{
+  "test1_overlays": 20,
+  "test2_compartment_intensity": {
+    "membrane_dab_mean": 0.30514443691018006,
+    "cytoplasm_dab_mean": 0.3622994337471886,
+    "nucleus_dab_mean": 0.39128716654202594,
+    "membrane_dab_std": 0.29390458198810165,
+    "n_cells_measured": 7340,
+    "n_tiles": 100,
+    "membrane_gt_cytoplasm": false,
+    "membrane_gt_nucleus": false
+  },
+  "test3_vs_expansion": {
+    "mean_iou_with_expansion": 0.00967357442110609,
+    "median_iou_with_expansion": 0.0,
+    "pct_boundaries_differ": 100.0,
+    "total_cells_compared": 7340,
+    "n_tiles": 100,
+    "expansion_um": 5.0
+  }
+}

@@ -1,0 +1,2 @@
+model_str,layers,dim_in,dim_out,n_sigma,dim_coords,dim_seeds,norm,cells_and_nuclei,target_segmentation,multihead,dropprob,pixel_size,channel_invariant,feature_engineering,adaptor_net_str,mlp_width,source,weights_hash
+InstanSeg_UNet,"(32, 64, 128, 256)",3,10,2,2,1,BATCH,True,NC,False,0.0,0.5,False,0,None,5,extracted_from_brightfield_nuclei,1afd47960eaa5620

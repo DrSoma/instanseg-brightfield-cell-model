@@ -1,0 +1,535 @@
+{
+  "summary": {
+    "success": 123,
+    "skip_empty_gt": 0,
+    "skip_inference_error": 0,
+    "skip_no_nuc": 24,
+    "skip_no_cell": 53
+  },
+  "skip_reasons": [
+    {
+      "tile": "tiles/CLDN0049/11968_35200.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 217.67800521850586,
+      "tissue_frac": 0.9261512756347656
+    },
+    {
+      "tile": "tiles/CLDN0049/12672_23232.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 227.35177357991537,
+      "tissue_frac": 0.9643707275390625
+    },
+    {
+      "tile": "tiles/CLDN0049/16896_35200.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 216.63963572184244,
+      "tissue_frac": 0.9191856384277344
+    },
+    {
+      "tile": "tiles/CLDN0049/19712_22528.tiff",
+      "reason": "no_nuclei_detected",
+      "brightness": 229.0506477355957,
+      "tissue_frac": 0.979095458984375
+    },
+    {
+      "tile": "tiles/CLDN0049/17600_40128.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 217.9052645365397,
+      "tissue_frac": 0.9657402038574219
+    },
+    {
+      "tile": "tiles/CLDN0049/97152_9152.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 208.2308807373047,
+      "tissue_frac": 0.99835205078125
+    },
+    {
+      "tile": "tiles/CLDN0049/12672_39424.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 215.00894419352213,
+      "tissue_frac": 0.9755287170410156
+    },
+    {
+      "tile": "tiles/CLDN0049/70400_14080.tiff",
+      "reason": "no_nuclei_detected",
+      "brightness": 172.82317988077799,
+      "tissue_frac": 0.9960517883300781
+    },
+    {
+      "tile": "tiles/CLDN0049/17600_39424.tiff",
+      "reason": "no_nuclei_detected",
+      "brightness": 221.00771204630533,
+      "tissue_frac": 0.9763984680175781
+    },
+    {
+      "tile": "tiles/CLDN0049/15488_42240.tiff",
+      "reason": "no_nuclei_detected",
+      "brightness": 215.87327448527017,
+      "tissue_frac": 0.9565887451171875
+    },
+    {
+      "tile": "tiles/CLDN0216/93632_14784.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 163.42099634806314,
+      "tissue_frac": 0.9865303039550781
+    },
+    {
+      "tile": "tiles/CLDN0216/90816_14080.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 111.73875681559245,
+      "tissue_frac": 0.993621826171875
+    },
+    {
+      "tile": "tiles/CLDN0216/97152_19712.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 137.67210261027017,
+      "tissue_frac": 0.9933967590332031
+    },
+    {
+      "tile": "tiles/CLDN0216/103488_16896.tiff",
+      "reason": "no_nuclei_detected",
+      "brightness": 179.77605438232422,
+      "tissue_frac": 0.9776153564453125
+    },
+    {
+      "tile": "tiles/CLDN0216/30976_27456.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 228.44228871663412,
+      "tissue_frac": 0.596923828125
+    },
+    {
+      "tile": "tiles/CLDN0216/95744_19712.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 150.66575241088867,
+      "tissue_frac": 0.9931564331054688
+    },
+    {
+      "tile": "tiles/CLDN0216/112640_7040.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 230.22308731079102,
+      "tissue_frac": 0.8146629333496094
+    },
+    {
+      "tile": "tiles/CLDN0216/26048_40832.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 224.1916847229004,
+      "tissue_frac": 0.6843643188476562
+    },
+    {
+      "tile": "tiles/CLDN0216/111936_9856.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 174.21193822224936,
+      "tissue_frac": 0.9878311157226562
+    },
+    {
+      "tile": "tiles/CLDN0216/32384_22528.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 225.77535756429037,
+      "tissue_frac": 0.7472381591796875
+    },
+    {
+      "tile": "tiles/CLDN0216/88000_15488.tiff",
+      "reason": "no_nuclei_detected",
+      "brightness": 128.91921869913736,
+      "tissue_frac": 0.9965248107910156
+    },
+    {
+      "tile": "tiles/CLDN0216/26048_38720.tiff",
+      "reason": "no_nuclei_detected",
+      "brightness": 227.14856592814127,
+      "tissue_frac": 0.6759376525878906
+    },
+    {
+      "tile": "tiles/CLDN0216/91520_16896.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 115.65296681722005,
+      "tissue_frac": 0.9952316284179688
+    },
+    {
+      "tile": "tiles/CLDN0216/28864_30976.tiff",
+      "reason": "no_nuclei_detected",
+      "brightness": 225.2915293375651,
+      "tissue_frac": 0.6738548278808594
+    },
+    {
+      "tile": "tiles/CLDN0216/95040_21824.tiff",
+      "reason": "no_nuclei_detected",
+      "brightness": 227.85530598958334,
+      "tissue_frac": 0.9604301452636719
+    },
+    {
+      "tile": "tiles/CLDN0216/100672_16192.tiff",
+      "reason": "no_nuclei_detected",
+      "brightness": 96.20744959513347,
+      "tissue_frac": 0.9949760437011719
+    },
+    {
+      "tile": "tiles/CLDN0216/97152_21120.tiff",
+      "reason": "no_nuclei_detected",
+      "brightness": 121.56685129801433,
+      "tissue_frac": 0.9937820434570312
+    },
+    {
+      "tile": "tiles/CLDN0216/21120_28864.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 222.12211990356445,
+      "tissue_frac": 0.7426414489746094
+    },
+    {
+      "tile": "tiles/CLDN0216/92224_9152.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 231.06203842163086,
+      "tissue_frac": 0.8604850769042969
+    },
+    {
+      "tile": "tiles/CLDN0216/103488_14784.tiff",
+      "reason": "no_nuclei_detected",
+      "brightness": 200.15850321451822,
+      "tissue_frac": 0.9827728271484375
+    },
+    {
+      "tile": "tiles/CLDN0216/98560_13376.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 163.163937886556,
+      "tissue_frac": 0.9622840881347656
+    },
+    {
+      "tile": "tiles/CLDN0216/23936_40128.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 224.3765106201172,
+      "tissue_frac": 0.7723655700683594
+    },
+    {
+      "tile": "tiles/CLDN0216/29568_30976.tiff",
+      "reason": "no_nuclei_detected",
+      "brightness": 224.11995951334634,
+      "tissue_frac": 0.7024993896484375
+    },
+    {
+      "tile": "tiles/CLDN0216/104192_20416.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 224.51002756754556,
+      "tissue_frac": 0.9151268005371094
+    },
+    {
+      "tile": "tiles/CLDN0216/91520_14080.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 113.80449676513672,
+      "tissue_frac": 0.9907073974609375
+    },
+    {
+      "tile": "tiles/CLDN0216/18304_33088.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 170.16245651245117,
+      "tissue_frac": 0.98284912109375
+    },
+    {
+      "tile": "tiles/CLDN0216/16896_23936.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 228.72220738728842,
+      "tissue_frac": 0.6692314147949219
+    },
+    {
+      "tile": "tiles/CLDN0216/29568_32384.tiff",
+      "reason": "no_nuclei_detected",
+      "brightness": 225.37598673502603,
+      "tissue_frac": 0.7068557739257812
+    },
+    {
+      "tile": "tiles/CLDN0229/22528_30976.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 228.62371317545572,
+      "tissue_frac": 0.8912010192871094
+    },
+    {
+      "tile": "tiles/CLDN0229/20416_19712.tiff",
+      "reason": "no_nuclei_detected",
+      "brightness": 227.85593541463217,
+      "tissue_frac": 0.754669189453125
+    },
+    {
+      "tile": "tiles/CLDN0229/27456_20416.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 228.83484649658203,
+      "tissue_frac": 0.6898384094238281
+    },
+    {
+      "tile": "tiles/CLDN0229/28160_17600.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 228.80169041951498,
+      "tissue_frac": 0.7498626708984375
+    },
+    {
+      "tile": "tiles/CLDN0229/20416_24640.tiff",
+      "reason": "no_nuclei_detected",
+      "brightness": 228.849001566569,
+      "tissue_frac": 0.804901123046875
+    },
+    {
+      "tile": "tiles/CLDN0229/27456_12672.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 230.3564821879069,
+      "tissue_frac": 0.7751693725585938
+    },
+    {
+      "tile": "tiles/CLDN0229/20416_22528.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 228.28033828735352,
+      "tissue_frac": 0.6803665161132812
+    },
+    {
+      "tile": "tiles/CLDN0229/15488_9152.tiff",
+      "reason": "no_nuclei_detected",
+      "brightness": 230.33448028564453,
+      "tissue_frac": 0.6525344848632812
+    },
+    {
+      "tile": "tiles/CLDN0229/18304_7744.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 230.67307662963867,
+      "tissue_frac": 0.873260498046875
+    },
+    {
+      "tile": "tiles/CLDN0229/93632_12672.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 222.50133768717447,
+      "tissue_frac": 0.8902435302734375
+    },
+    {
+      "tile": "tiles/CLDN0229/23232_25344.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 228.3892084757487,
+      "tissue_frac": 0.6857261657714844
+    },
+    {
+      "tile": "tiles/CLDN0229/23936_7744.tiff",
+      "reason": "no_nuclei_detected",
+      "brightness": 230.84571329752603,
+      "tissue_frac": 0.7931556701660156
+    },
+    {
+      "tile": "tiles/CLDN0229/140096_12672.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 231.4620590209961,
+      "tissue_frac": 0.9237289428710938
+    },
+    {
+      "tile": "tiles/CLDN0229/18304_8448.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 227.86672846476236,
+      "tissue_frac": 0.7773895263671875
+    },
+    {
+      "tile": "tiles/CLDN0229/28160_9856.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 229.39612325032553,
+      "tissue_frac": 0.7078170776367188
+    },
+    {
+      "tile": "tiles/CLDN0229/26048_11968.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 230.40542348225912,
+      "tissue_frac": 0.7142410278320312
+    },
+    {
+      "tile": "tiles/CLDN0229/19712_23232.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 225.44673792521158,
+      "tissue_frac": 0.7439041137695312
+    },
+    {
+      "tile": "tiles/CLDN0229/21824_23936.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 228.3419443766276,
+      "tissue_frac": 0.7728538513183594
+    },
+    {
+      "tile": "tiles/CLDN0229/22528_26048.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 229.9303410847982,
+      "tissue_frac": 0.8082504272460938
+    },
+    {
+      "tile": "tiles/CLDN0235/14784_17600.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 222.65180842081705,
+      "tissue_frac": 0.82354736328125
+    },
+    {
+      "tile": "tiles/CLDN0235/7744_22528.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 225.2015813191732,
+      "tissue_frac": 0.7130546569824219
+    },
+    {
+      "tile": "tiles/CLDN0235/97152_9856.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 224.53375498453775,
+      "tissue_frac": 0.9998817443847656
+    },
+    {
+      "tile": "tiles/CLDN0235/13376_23232.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 227.4352010091146,
+      "tissue_frac": 0.8142776489257812
+    },
+    {
+      "tile": "tiles/CLDN0235/9856_32384.tiff",
+      "reason": "no_nuclei_detected",
+      "brightness": 224.7641805013021,
+      "tissue_frac": 0.8090858459472656
+    },
+    {
+      "tile": "tiles/CLDN0235/5632_30272.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 220.78125127156576,
+      "tissue_frac": 0.8493537902832031
+    },
+    {
+      "tile": "tiles/CLDN0235/85888_25344.tiff",
+      "reason": "no_nuclei_detected",
+      "brightness": 158.7554588317871,
+      "tissue_frac": 0.9997329711914062
+    },
+    {
+      "tile": "tiles/CLDN0235/87296_35200.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 130.68635431925455,
+      "tissue_frac": 0.9548606872558594
+    },
+    {
+      "tile": "tiles/CLDN0235/89408_26752.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 178.43295415242514,
+      "tissue_frac": 0.99737548828125
+    },
+    {
+      "tile": "tiles/CLDN0235/18304_27456.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 221.7140121459961,
+      "tissue_frac": 0.8967781066894531
+    },
+    {
+      "tile": "tiles/CLDN0235/6336_33792.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 226.20109430948892,
+      "tissue_frac": 0.8793373107910156
+    },
+    {
+      "tile": "tiles/CLDN0235/108416_28864.tiff",
+      "reason": "no_nuclei_detected",
+      "brightness": 117.75720850626628,
+      "tissue_frac": 0.9932327270507812
+    },
+    {
+      "tile": "tiles/CLDN0235/112640_33792.tiff",
+      "reason": "no_nuclei_detected",
+      "brightness": 98.67210642496745,
+      "tissue_frac": 0.9984550476074219
+    },
+    {
+      "tile": "tiles/CLDN0235/88704_33792.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 177.7521603902181,
+      "tissue_frac": 0.9453086853027344
+    },
+    {
+      "tile": "tiles/CLDN0235/10560_13376.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 227.65371958414713,
+      "tissue_frac": 0.9261283874511719
+    },
+    {
+      "tile": "tiles/CLDN0235/91520_26048.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 113.19345347086589,
+      "tissue_frac": 0.997711181640625
+    },
+    {
+      "tile": "tiles/CLDN0235/108416_28160.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 111.06454086303711,
+      "tissue_frac": 0.9954414367675781
+    },
+    {
+      "tile": "tiles/CLDN0235/111232_33088.tiff",
+      "reason": "no_nuclei_detected",
+      "brightness": 103.12806828816731,
+      "tissue_frac": 0.9963264465332031
+    },
+    {
+      "tile": "tiles/CLDN0235/88704_26752.tiff",
+      "reason": "no_cells_detected",
+      "brightness": 171.51976521809897,
+      "tissue_frac": 0.9989166259765625
+    },
+    {
+      "tile": "tiles/CLDN0235/109824_35200.tiff",
+      "reason": "no_nuclei_detected",
+      "brightness": 192.11754989624023,
+      "tissue_frac": 0.9974174499511719
+    }
+  ],
+  "success_stats": [
+    {
+      "brightness": 199.629275004069,
+      "tissue_frac": 0.9941558837890625,
+      "n_nuc": 223,
+      "n_cell": 167
+    },
+    {
+      "brightness": 211.43006896972656,
+      "tissue_frac": 0.9694747924804688,
+      "n_nuc": 225,
+      "n_cell": 191
+    },
+    {
+      "brightness": 161.51275634765625,
+      "tissue_frac": 0.9826126098632812,
+      "n_nuc": 220,
+      "n_cell": 183
+    },
+    {
+      "brightness": 215.41278584798178,
+      "tissue_frac": 0.9744796752929688,
+      "n_nuc": 104,
+      "n_cell": 53
+    },
+    {
+      "brightness": 207.87529881795248,
+      "tissue_frac": 0.9994392395019531,
+      "n_nuc": 217,
+      "n_cell": 186
+    },
+    {
+      "brightness": 218.5323257446289,
+      "tissue_frac": 0.8805732727050781,
+      "n_nuc": 34,
+      "n_cell": 5
+    },
+    {
+      "brightness": 206.85027694702148,
+      "tissue_frac": 0.952484130859375,
+      "n_nuc": 204,
+      "n_cell": 144
+    },
+    {
+      "brightness": 213.06865819295248,
+      "tissue_frac": 0.9660453796386719,
+      "n_nuc": 113,
+      "n_cell": 65
+    },
+    {
+      "brightness": 185.7519963582357,
+      "tissue_frac": 0.9891777038574219,
+      "n_nuc": 217,
+      "n_cell": 179
+    },
+    {
+      "brightness": 169.4203084309896,
+      "tissue_frac": 0.9848747253417969,
+      "n_nuc": 236,
+      "n_cell": 206
+    }
+  ]
+}

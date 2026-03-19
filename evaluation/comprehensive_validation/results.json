@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-03-19 14:08:50",
+  "device": "cuda:0",
+  "n_tiles_processed": 123,
+  "n_tiles_skipped": 77,
+  "total_cells": 9857,
+  "wall_time_s": 59.5,
+  "task1_bar_filter": {
+    "method": "aperio_bar_filter",
+    "n_cells": 6626,
+    "membrane_dab_mean": 0.2938,
+    "cytoplasm_dab_mean": 0.1669,
+    "nucleus_dab_mean": 0.2926,
+    "gap": 0.1269,
+    "test2_pass": true,
+    "mean_completeness": 0.8624
+  },
+  "task2_adaptive_ring": {
+    "method": "adaptive_ring_16ray",
+    "n_cells": 1367,
+    "membrane_dab_mean": 0.2728,
+    "cytoplasm_dab_mean": 0.2443,
+    "nucleus_dab_mean": 0.2815,
+    "gap": 0.0286,
+    "test2_pass": true,
+    "median_peak_distance_px": 8.0
+  },
+  "task3_hscore_concordance": {
+    "n_tiles": 123,
+    "model_hscore_mean": 198.3647721011762,
+    "model_hscore_std": 56.57539981961776,
+    "expansion_hscore_mean": 85.93830589402599,
+    "expansion_hscore_std": 88.10932177454787,
+    "mean_difference": 112.4264662071502,
+    "std_difference": 71.39430630210587,
+    "model_higher_count": 115,
+    "expansion_higher_count": 6,
+    "equal_count": 2,
+    "pearson_r": 0.5884747442993671,
+    "icc_31": 0.9772572541563223,
+    "paired_t_stat": 17.464555541458154,
+    "paired_p_value": 0.0,
+    "thresholds_used": [
+      0.15,
+      0.19271693378686905,
+      0.251934289932251
+    ],
+    "model_mean_positivity": 67.91,
+    "expansion_mean_positivity": 25.9
+  },
+  "baseline_fixed_ring": {
+    "method": "fixed_10px_ring",
+    "n_cells": 6634,
+    "membrane_dab_mean": 0.2537,
+    "cytoplasm_dab_mean": 0.2738,
+    "nucleus_dab_mean": 0.2932,
+    "gap": -0.0201,
+    "test2_pass": false
+  }
+}

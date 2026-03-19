@@ -1,0 +1,9 @@
+{
+  "slide": "/media/fernandosoto/DATA/Cluster 1/BTC-01.ndpi",
+  "stain": "H&E (no DAB)",
+  "tiles": 50,
+  "mean_dab_on_he": 0.3632,
+  "bar_filter_gap_he": 0.1396,
+  "bar_filter_gap_he_std": 0.052,
+  "bias_corrected_gap_positive": 0.1239
+}

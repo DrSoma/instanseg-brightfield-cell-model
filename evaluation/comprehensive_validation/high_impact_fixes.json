@@ -1,0 +1,83 @@
+{
+  "timestamp": "2026-03-19 14:59:40",
+  "n_tiles": 300,
+  "skip_rate": {
+    "default_tiles": 201,
+    "fallback_tiles": 72,
+    "failed_tiles": 27,
+    "original_skip_pct": 33.0,
+    "new_skip_pct": 9.0
+  },
+  "dab_thresholds": {
+    "p10": 0.0787,
+    "p50": 0.1558,
+    "p90": 1.2194
+  },
+  "strata": {
+    "neg": {
+      "tiles": 24,
+      "cells": 124,
+      "membrane_ring_dab": 0.198,
+      "cytoplasm_dab": 0.2072,
+      "gap": -0.0092,
+      "membrane_completeness": 0.9106,
+      "hscore": 137.9,
+      "pct_2plus3": 36.3,
+      "methods": {
+        "default": 11,
+        "fallback": 13,
+        "failed": 6
+      }
+    },
+    "low": {
+      "tiles": 112,
+      "cells": 4418,
+      "membrane_ring_dab": 0.2039,
+      "cytoplasm_dab": 0.2088,
+      "gap": -0.0049,
+      "membrane_completeness": 0.8832,
+      "hscore": 140.8,
+      "pct_2plus3": 38.3,
+      "methods": {
+        "default": 80,
+        "fallback": 32,
+        "failed": 8
+      }
+    },
+    "high": {
+      "tiles": 111,
+      "cells": 6941,
+      "membrane_ring_dab": 0.2686,
+      "cytoplasm_dab": 0.2825,
+      "gap": -0.0139,
+      "membrane_completeness": 0.8468,
+      "hscore": 177.1,
+      "pct_2plus3": 66.8,
+      "methods": {
+        "default": 93,
+        "fallback": 18,
+        "failed": 9
+      }
+    },
+    "strong": {
+      "tiles": 26,
+      "cells": 446,
+      "membrane_ring_dab": 0.4817,
+      "cytoplasm_dab": 0.5479,
+      "gap": -0.0662,
+      "membrane_completeness": 0.7326,
+      "hscore": 220.9,
+      "pct_2plus3": 89.5,
+      "methods": {
+        "default": 17,
+        "fallback": 9,
+        "failed": 4
+      }
+    }
+  },
+  "overall": {
+    "n_cells": 11929,
+    "membrane_ring_dab_mean": 0.2518,
+    "whole_cell_dab_mean": 0.2533
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "timestamp": "2026-03-19 14:29:38",
+  "n_tiles_total": 300,
+  "n_tiles_processed": 201,
+  "skip_rate_standard": 33.0,
+  "recovered_with_lower_threshold": 0,
+  "final_skip_rate": 33.0,
+  "dab_distribution": {
+    "mean": 0.395,
+    "p10": 0.0787,
+    "p90": 1.2194
+  },
+  "strata": {
+    "neg": {
+      "n_cells": 144,
+      "bar_filter": {
+        "membrane_dab": 0.218,
+        "cytoplasm_dab": 0.119,
+        "gap": 0.0989,
+        "n_cells": 90
+      },
+      "fixed_ring": {
+        "membrane_dab": 0.1954,
+        "cytoplasm_dab": 0.205,
+        "gap": -0.0097,
+        "n_cells": 90
+      },
+      "adaptive_ring_relaxed": {
+        "membrane_dab": 0.194,
+        "cytoplasm_dab": 0.162,
+        "gap": 0.032,
+        "n_cells": 15
+      },
+      "nucleus_dab": {
+        "full_nucleus": 0.2046,
+        "interior_only": 0.2042
+      }
+    },
+    "pos": {
+      "n_cells": 607,
+      "bar_filter": {
+        "membrane_dab": 0.556,
+        "cytoplasm_dab": 0.2925,
+        "gap": 0.2635,
+        "n_cells": 416
+      },
+      "fixed_ring": {
+        "membrane_dab": 0.4531,
+        "cytoplasm_dab": 0.526,
+        "gap": -0.0729,
+        "n_cells": 416
+      },
+      "adaptive_ring_relaxed": {
+        "membrane_dab": 0.3885,
+        "cytoplasm_dab": 0.372,
+        "gap": 0.0165,
+        "n_cells": 31
+      },
+      "nucleus_dab": {
+        "full_nucleus": 0.5608,
+        "interior_only": 0.5892
+      }
+    },
+    "mid": {
+      "n_cells": 16905,
+      "bar_filter": {
+        "membrane_dab": 0.2754,
+        "cytoplasm_dab": 0.1625,
+        "gap": 0.1129,
+        "n_cells": 11142
+      },
+      "fixed_ring": {
+        "membrane_dab": 0.2414,
+        "cytoplasm_dab": 0.2525,
+        "gap": -0.0111,
+        "n_cells": 11142
+      },
+      "adaptive_ring_relaxed": {
+        "membrane_dab": 0.2531,
+        "cytoplasm_dab": 0.2189,
+        "gap": 0.0342,
+        "n_cells": 594
+      },
+      "nucleus_dab": {
+        "full_nucleus": 0.2698,
+        "interior_only": 0.274
+      }
+    }
+  },
+  "bar_filter_bias": 0.0989,
+  "bar_filter_bias_corrected_gap": 0.1646
+}

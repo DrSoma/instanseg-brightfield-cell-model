@@ -1,0 +1,20 @@
+{
+  "thresholds": {
+    "neg": 0.1,
+    "1+": 0.2,
+    "2+": 0.35,
+    "3+": 0.35
+  },
+  "thresholds_source": "Claudin18 pipeline calibrated (04_classify_cells_dab.py)",
+  "n_tiles": 123,
+  "model_hscore_mean": 176.96304612084953,
+  "model_hscore_std": 43.94496256482681,
+  "expansion_hscore_mean": 117.97294744231148,
+  "expansion_hscore_std": 68.24250784620368,
+  "mean_difference": 58.99009867853807,
+  "model_higher_pct": 88.6178861788618,
+  "model_cldn18_positivity": 62.6468147093761,
+  "expansion_cldn18_positivity": 24.30382917749575,
+  "paired_t": 12.164683546209337,
+  "paired_p": 8.757134104410231e-23
+}
