@@ -1,0 +1,92 @@
+PIPELINE COMPARISON SUMMARY
+Generated: 2026-03-19 16:22:13
+======================================================================
+
+Slide: BC_ClassII
+  V1 (baseline) cells:          0
+  V2 (our model) cells:    62,881
+
+  Region: Patient_Tissue
+    V1 cells: 0
+    V2 cells: 41,535
+    CSV baseline H-score:     115.8906
+    CSV baseline pct_positive: 46.4148%
+    CSV baseline mean_dab_od:  0.4334
+    V2 membrane-ring H-score:     277.3
+    V2 membrane-ring pct_positive: 97.7%
+    V2 membrane-ring mean_dab:     2.1303
+    V2 membrane-ring completeness: (per cell, see JSON)
+    V2 intensity breakdown:
+      Negative: 0.0%
+      1+:       2.3%
+      2+:       18.1%
+      3+:       79.6%
+
+  Region: iCAP_Control
+    V1 cells: 0
+    V2 cells: 21,346
+    CSV baseline H-score:     45.3708
+    CSV baseline pct_positive: 23.3973%
+    CSV baseline mean_dab_od:  0.1788
+    V2 membrane-ring H-score:     226.3
+    V2 membrane-ring pct_positive: 83.5%
+    V2 membrane-ring mean_dab:     1.0791
+    V2 membrane-ring completeness: (per cell, see JSON)
+    V2 intensity breakdown:
+      Negative: 0.0%
+      1+:       16.5%
+      2+:       40.7%
+      3+:       42.8%
+
+Slide: BC_ClassIII
+  V1 (baseline) cells:          0
+  V2 (our model) cells:    98,457
+
+  Region: Patient_Tissue
+    V1 cells: 0
+    V2 cells: 72,993
+    CSV baseline H-score:     267.4084
+    CSV baseline pct_positive: 96.1211%
+    CSV baseline mean_dab_od:  0.9006
+    V2 membrane-ring H-score:     281.0
+    V2 membrane-ring pct_positive: 98.2%
+    V2 membrane-ring mean_dab:     2.0286
+    V2 membrane-ring completeness: (per cell, see JSON)
+    V2 intensity breakdown:
+      Negative: 0.0%
+      1+:       1.8%
+      2+:       15.4%
+      3+:       82.8%
+
+  Region: Unknown
+    V1 cells: 0
+    V2 cells: 5
+    CSV baseline H-score:     263.6364
+    CSV baseline pct_positive: 100.0%
+    CSV baseline mean_dab_od:  0.7707
+    V2 membrane-ring H-score:     280.0
+    V2 membrane-ring pct_positive: 100.0%
+    V2 membrane-ring mean_dab:     1.9341
+    V2 membrane-ring completeness: (per cell, see JSON)
+    V2 intensity breakdown:
+      Negative: 0.0%
+      1+:       0.0%
+      2+:       20.0%
+      3+:       80.0%
+
+  Region: iCAP_Control
+    V1 cells: 0
+    V2 cells: 25,459
+    CSV baseline H-score:     227.9319
+    CSV baseline pct_positive: 85.4148%
+    CSV baseline mean_dab_od:  0.7612
+    V2 membrane-ring H-score:     239.2
+    V2 membrane-ring pct_positive: 88.9%
+    V2 membrane-ring mean_dab:     1.1922
+    V2 membrane-ring completeness: (per cell, see JSON)
+    V2 intensity breakdown:
+      Negative: 0.0%
+      1+:       11.1%
+      2+:       38.7%
+      3+:       50.3%
+

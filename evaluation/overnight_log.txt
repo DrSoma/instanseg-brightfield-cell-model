@@ -1,0 +1,177 @@
+======================================================
+OVERNIGHT EXPERIMENT SUITE — Wed Mar 18 10:46:40 PM EDT 2026
+======================================================
+Waiting for Branch G (U-Net membrane detector)...
+Branch G process ended
+
+======================================================
+PHASE 1: Additional Membrane Detectors
+======================================================
+=== MedSAM 2 ===
+Wed Mar 18 10:46:45 PM EDT 2026
+  File "/home/fernandosoto/claudin18_venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fernandosoto/claudin18_venv/lib/python3.12/site-packages/segment_anything/modeling/mask_decoder.py", line 94, in forward
+    masks, iou_pred = self.predict_masks(
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/home/fernandosoto/claudin18_venv/lib/python3.12/site-packages/segment_anything/modeling/mask_decoder.py", line 127, in predict_masks
+    src = src + dense_prompt_embeddings
+          ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+RuntimeError: The size of tensor a (16) must match the size of tensor b (4) at non-singleton dimension 0
+=== BiomedParse ===
+Wed Mar 18 10:47:22 PM EDT 2026
+2026-03-19 04:56:19 | INFO    | __main__ | Slide CLDN0450 complete: 400 tiles processed
+2026-03-19 04:56:19 | INFO    | __main__ | Processing slide CLDN0451: 400 tiles with nucleus masks
+2026-03-19 04:56:38 | INFO    | __main__ | Slide CLDN0451 complete: 400 tiles processed
+2026-03-19 04:56:38 | INFO    | __main__ | Processing slide CLDN0452: 397 tiles with nucleus masks
+2026-03-19 04:56:55 | INFO    | __main__ | Slide CLDN0452 complete: 397 tiles processed
+2026-03-19 04:56:55 | INFO    | __main__ | Mask generation complete: 65165 tiles, 3684198 total cell instances
+2026-03-19 04:56:56 | INFO    | __main__ | ========================================================================
+2026-03-19 04:56:56 | INFO    | __main__ | All done. Model: models/membrane_biomedparse.pth
+2026-03-19 04:56:56 | INFO    | __main__ | Masks: data/masks_biomedparse
+2026-03-19 04:56:56 | INFO    | __main__ | ========================================================================
+
+=== branch_biomedparse: Building dataset ===
+Thu Mar 19 04:56:57 AM EDT 2026
+Train: 6797
+Validation: 1423
+Test: 1445
+Total: 9665
+=== branch_biomedparse: Training InstanSeg ===
+Thu Mar 19 04:57:05 AM EDT 2026
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fernandosoto/claudin18_venv/lib/python3.12/site-packages/torch/utils/data/_utils/signal_handling.py", line 73, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 3392955) is killed by signal: Killed. 
+=== branch_biomedparse: Exporting ===
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+/home/fernandosoto/claudin18_venv/lib/python3.12/site-packages/instanseg/utils/utils.py:366: FutureWarning: `optimize` is deprecated and has no effect. Use `with torch.jit.optimized_execution()` instead
+  traced_cpu = torch.jit.script(super_model, input_tensor[None, ])
+Generating InstanSeg_UNet
+Saved torchscript model to /home/fernandosoto/Documents/instanseg-brightfield-cell-model/models/exported/brightfield_cells_nuclei.pt
+
+=== RESUMED Thu Mar 19 09:29:18 AM EDT 2026 ===
+=== branch_biomedparse: Building dataset ===
+Train: 6797
+Validation: 1423
+Test: 1445
+Total: 9665
+=== branch_biomedparse: Training ===
+2026-03-19 09:30:07 | INFO    | __main__ | Layers            : [32, 64, 128, 256]
+2026-03-19 09:30:07 | INFO    | __main__ | ========================================================================
+2026-03-19 09:30:07 | INFO    | __main__ | Dataset file verified: data/segmentation_dataset.pth
+2026-03-19 09:30:07 | INFO    | __main__ | Starting InstanSeg training loop ...
+2026-03-19 09:30:09 | INFO    | __main__ | Skipping optimizer state load (fresh optimizer for fine-tuning)
+
+======================================================
+OPTIMIZED PARALLEL RUN — Thu Mar 19 09:34:05 AM EDT 2026
+======================================================
+PHASE 1: BiomedParse InstanSeg training
+=== branch_biomedparse: Building dataset ===
+Train: 6797
+Validation: 1423
+Test: 1445
+Total: 9665
+=== branch_biomedparse: Training on GPU 0 ===
+2026-03-19 09:50:19 | INFO    | __main__ |   [early-stop] New best test_loss=0.66809 at epoch 9 — saved
+train_loss: 0.78406, test_loss: 0.66809, training_time: 70, testing_time: 18, f1_score_nuclei: 0, f1_score_cells: 0, f1_score_joint: 0
+Starting main training loop with l1_distance and lovasz_hinge
+Epoch: 0
+  0%|          | 0/334 [00:00<?, ?it/s]  0%|          | 1/334 [00:01<06:55,  1.25s/it]  1%|          | 2/334 [00:01<04:04,  1.36it/s]  1%|          | 3/334 [00:01<03:00,  1.83it/s]  1%|          | 4/334 [00:02<02:42,  2.03it/s]  1%|▏         | 5/334 [00:02<02:31,  2.17it/s]  2%|▏         | 6/334 [00:03<02:20,  2.33it/s]  2%|▏         | 7/334 [00:03<02:17,  2.37it/s]  2%|▏         | 8/334 [00:03<02:12,  2.47it/s]  3%|▎         | 9/334 [00:04<02:07,  2.55it/s]  3%|▎         | 10/334 [00:04<02:05,  2.57it/s]  3%|▎         | 11/334 [00:05<02:05,  2.57it/s]  4%|▎         | 12/334 [00:05<02:02,  2.64it/s]  4%|▍         | 13/334 [00:05<02:06,  2.54it/s]  4%|▍         | 14/334 [00:06<02:05,  2.56it/s]  4%|▍         | 15/334 [00:06<02:06,  2.52it/s]  5%|▍         | 16/334 [00:07<02:08,  2.48it/s]  5%|▌         | 17/334 [00:07<02:12,  2.39it/s]  5%|▌         | 18/334 [00:07<02:07,  2.47it/s]  6%|▌         | 19/334 [00:08<02:02,  2.58it/s]  6%|▌         | 20/334 [00:08<02:01,  2.59it/s]  6%|▋         | 21/334 [00:08<02:00,  2.60it/s]  7%|▋         | 22/334 [00:09<02:03,  2.54it/s]  7%|▋         | 23/334 [00:09<02:01,  2.56it/s]  7%|▋         | 24/334 [00:10<02:02,  2.52it/s]  7%|▋         | 25/334 [00:10<02:03,  2.51it/s]  8%|▊         | 26/334 [00:10<02:00,  2.55it/s]  8%|▊         | 27/334 [00:11<01:59,  2.56it/s]  8%|▊         | 28/334 [00:11<01:58,  2.57it/s]  9%|▊         | 29/334 [00:12<02:02,  2.49it/s]  9%|▉         | 30/334 [00:12<02:04,  2.43it/s]  9%|▉         | 31/334 [00:12<02:02,  2.47it/s] 10%|▉         | 32/334 [00:13<02:01,  2.49it/s] 10%|▉         | 33/334 [00:13<01:58,  2.55it/s] 10%|█         | 34/334 [00:14<01:58,  2.54it/s] 10%|█         | 35/334 [00:14<01:57,  2.55it/s] 11%|█         | 36/334 [00:15<02:02,  2.42it/s] 11%|█         | 37/334 [00:15<01:58,  2.51it/s] 11%|█▏        | 38/334 [00:15<02:00,  2.45it/s] 12%|█▏        | 39/334 [00:16<02:04,  2.38it/s] 12%|█▏        | 40/334 [00:16<02:01,  2.42it/s] 12%|█▏        | 41/334 [00:17<02:02,  2.39it/s] 13%|█▎        | 42/334 [00:17<01:56,  2.50it/s] 13%|█▎        | 43/334 [00:17<01:56,  2.51it/s] 13%|█▎        | 44/334 [00:18<01:57,  2.46it/s] 13%|█▎        | 45/334 [00:18<01:54,  2.52it/s] 14%|█▍        | 46/334 [00:19<01:57,  2.45it/s] 14%|█▍        | 47/334 [00:19<01:50,  2.60it/s] 14%|█▍        | 48/334 [00:19<01:55,  2.47it/s] 15%|█▍        | 49/334 [00:20<01:59,  2.39it/s] 15%|█▍        | 50/334 [00:20<01:57,  2.42it/s] 15%|█▌        | 51/334 [00:21<01:52,  2.51it/s] 16%|█▌        | 52/334 [00:21<01:52,  2.51it/s] 16%|█▌        | 53/334 [00:21<01:51,  2.53it/s] 16%|█▌        | 54/334 [00:22<01:54,  2.45it/s] 16%|█▋        | 55/334 [00:22<01:52,  2.47it/s] 17%|█▋        | 56/334 [00:23<01:48,  2.55it/s] 17%|█▋        | 57/334 [00:23<01:49,  2.53it/s] 17%|█▋        | 58/334 [00:23<01:47,  2.58it/s] 18%|█▊        | 59/334 [00:24<01:43,  2.66it/s] 18%|█▊        | 60/334 [00:24<01:41,  2.69it/s] 18%|█▊        | 61/334 [00:24<01:43,  2.63it/s] 19%|█▊        | 62/334 [00:25<01:45,  2.57it/s] 19%|█▉        | 63/334 [00:25<01:50,  2.46it/s] 19%|█▉        | 64/334 [00:26<01:49,  2.47it/s] 19%|█▉        | 65/334 [00:26<01:51,  2.41it/s] 20%|█▉        | 66/334 [00:27<01:52,  2.38it/s] 20%|██        | 67/334 [00:27<01:52,  2.38it/s] 20%|██        | 68/334 [00:27<01:45,  2.52it/s] 21%|██        | 69/334 [00:28<01:45,  2.51it/s] 21%|██        | 70/334 [00:28<01:42,  2.57it/s] 21%|██▏       | 71/334 [00:28<01:41,  2.58it/s] 22%|██▏       | 72/334 [00:29<01:39,  2.62it/s] 22%|██▏       | 73/334 [00:29<01:40,  2.60it/s] 22%|██▏       | 74/334 [00:30<01:40,  2.60it/s] 22%|██▏       | 75/334 [00:30<01:41,  2.55it/s] 23%|██▎       | 76/334 [00:30<01:38,  2.62it/s] 23%|██▎       | 77/334 [00:31<01:39,  2.58it/s] 23%|██▎       | 78/334 [00:31<01:36,  2.65it/s] 24%|██▎       | 79/334 [00:32<01:40,  2.54it/s] 24%|██▍       | 80/334 [00:32<01:35,  2.65it/s] 24%|██▍       | 81/334 [00:32<01:39,  2.54it/s] 25%|██▍       | 82/334 [00:33<01:40,  2.50it/s] 25%|██▍       | 83/334 [00:33<01:39,  2.52it/s] 25%|██▌       | 84/334 [00:34<01:37,  2.55it/s] 25%|██▌       | 85/334 [00:34<01:35,  2.61it/s] 26%|██▌       | 86/334 [00:34<01:37,  2.55it/s] 26%|██▌       | 87/334 [00:35<01:32,  2.67it/s] 26%|██▋       | 88/334 [00:35<01:27,  2.80it/s] 27%|██▋       | 89/334 [00:35<01:32,  2.66it/s] 27%|██▋       | 90/334 [00:36<01:36,  2.53it/s] 27%|██▋       | 91/334 [00:36<01:36,  2.51it/s] 28%|██▊       | 92/334 [00:37<01:40,  2.40it/s] 28%|██▊       | 93/334 [00:37<01:42,  2.35it/s] 28%|██▊       | 94/334 [00:37<01:38,  2.43it/s] 28%|██▊       | 95/334 [00:38<01:37,  2.46it/s] 29%|██▊       | 96/334 [00:38<01:37,  2.44it/s] 29%|██▉       | 97/334 [00:39<01:33,  2.52it/s] 29%|██▉       | 98/334 [00:39<01:32,  2.55it/s] 30%|██▉       | 99/334 [00:39<01:31,  2.57it/s] 30%|██▉       | 100/334 [00:40<01:33,  2.49it/s] 30%|███       | 101/334 [00:40<01:33,  2.50it/s] 31%|███       | 102/334 [00:41<01:26,  2.68it/s] 31%|███       | 103/334 [00:41<01:28,  2.60it/s] 31%|███       | 104/334 [00:41<01:29,  2.58it/s] 31%|███▏      | 105/334 [00:42<01:27,  2.61it/s] 32%|███▏      | 106/334 [00:42<01:24,  2.69it/s] 32%|███▏      | 107/334 [00:42<01:26,  2.63it/s] 32%|███▏      | 108/334 [00:43<01:27,  2.60it/s] 33%|███▎      | 109/334 [00:43<01:24,  2.67it/s] 33%|███▎      | 110/334 [00:44<01:28,  2.53it/s] 33%|███▎      | 111/334 [00:44<01:30,  2.47it/s] 34%|███▎      | 112/334 [00:45<01:29,  2.49it/s] 34%|███▍      | 113/334 [00:45<01:29,  2.48it/s] 34%|███▍      | 114/334 [00:45<01:29,  2.45it/s] 34%|███▍      | 115/334 [00:46<01:25,  2.57it/s] 35%|███▍      | 116/334 [00:46<01:26,  2.51it/s] 35%|███▌      | 117/334 [00:47<01:28,  2.46it/s] 35%|███▌      | 118/334 [00:47<01:28,  2.44it/s] 36%|███▌      | 119/334 [00:47<01:23,  2.56it/s] 36%|███▌      | 120/334 [00:48<01:24,  2.53it/s] 36%|███▌      | 121/334 [00:48<01:26,  2.48it/s] 37%|███▋      | 122/334 [00:49<01:27,  2.41it/s] 37%|███▋      | 123/334 [00:49<01:25,  2.47it/s] 37%|███▋      | 124/334 [00:49<01:23,  2.51it/s] 37%|███▋      | 125/334 [00:50<01:22,  2.54it/s] 38%|███▊      | 126/334 [00:50<01:17,  2.70it/s] 38%|███▊      | 127/334 [00:50<01:20,  2.57it/s] 38%|███▊      | 128/334 [00:51<01:15,  2.74it/s] 39%|███▊      | 129/334 [00:51<01:15,  2.72it/s] 39%|███▉      | 130/334 [00:52<01:15,  2.71it/s] 39%|███▉      | 131/334 [00:52<01:14,  2.73it/s] 40%|███▉      | 132/334 [00:52<01:18,  2.56it/s] 40%|███▉      | 133/334 [00:53<01:18,  2.55it/s] 40%|████      | 134/334 [00:53<01:21,  2.44it/s] 40%|████      | 135/334 [00:54<01:22,  2.42it/s] 41%|████      | 136/334 [00:54<01:20,  2.47it/s] 41%|████      | 137/334 [00:54<01:19,  2.49it/s] 41%|████▏     | 138/334 [00:55<01:18,  2.51it/s] 42%|████▏     | 139/334 [00:55<01:17,  2.53it/s] 42%|████▏     | 140/334 [00:56<01:16,  2.53it/s] 42%|████▏     | 141/334 [00:56<01:17,  2.48it/s] 43%|████▎     | 142/334 [00:56<01:14,  2.57it/s] 43%|████▎     | 143/334 [00:57<01:14,  2.55it/s] 43%|████▎     | 144/334 [00:57<01:12,  2.64it/s] 43%|████▎     | 145/334 [00:57<01:11,  2.66it/s] 44%|████▎     | 146/334 [00:58<01:12,  2.59it/s] 44%|████▍     | 147/334 [00:58<01:12,  2.60it/s] 44%|████▍     | 148/334 [00:59<01:12,  2.57it/s]
+======================================================
+OPTIMIZED PARALLEL RUN — Thu Mar 19 09:52:16 AM EDT 2026
+======================================================
+PHASE 1: BiomedParse InstanSeg training
+=== branch_biomedparse: Building dataset ===
+Train: 6797
+Validation: 1423
+Test: 1445
+Total: 9665
+=== branch_biomedparse: Training on GPU 0 ===
+  plt.show()
+2026-03-19 09:54:22 | INFO    | __main__ |   [early-stop] New best test_loss=1.50734 at epoch 0 — saved
+train_loss: 1.6773, test_loss: 1.5073, training_time: 68, testing_time: 9, f1_score_nuclei: 0, f1_score_cells: 0, f1_score_joint: 0
+Epoch: 1
+  0%|          | 0/334 [00:00<?, ?it/s]  0%|          | 1/334 [00:00<04:51,  1.14it/s]  1%|          | 2/334 [00:01<02:37,  2.11it/s]  1%|          | 3/334 [00:01<01:54,  2.88it/s]  1%|          | 4/334 [00:01<01:35,  3.44it/s]  1%|▏         | 5/334 [00:01<01:24,  3.88it/s]  2%|▏         | 6/334 [00:01<01:17,  4.21it/s]  2%|▏         | 7/334 [00:02<01:14,  4.38it/s]  2%|▏         | 8/334 [00:02<01:11,  4.58it/s]  3%|▎         | 9/334 [00:02<01:09,  4.69it/s]  3%|▎         | 10/334 [00:02<01:07,  4.79it/s]  3%|▎         | 11/334 [00:02<01:06,  4.85it/s]  4%|▎         | 12/334 [00:03<01:06,  4.85it/s]  4%|▍         | 13/334 [00:03<01:05,  4.87it/s]  4%|▍         | 14/334 [00:03<01:05,  4.89it/s]  4%|▍         | 15/334 [00:03<01:04,  4.97it/s]  5%|▍         | 16/334 [00:03<01:03,  5.05it/s]  5%|▌         | 17/334 [00:04<01:02,  5.10it/s]  5%|▌         | 18/334 [00:04<01:01,  5.10it/s]  6%|▌         | 19/334 [00:04<01:02,  5.01it/s]  6%|▌         | 20/334 [00:04<01:01,  5.13it/s]  6%|▋         | 21/334 [00:04<01:01,  5.08it/s]  7%|▋         | 22/334 [00:05<01:02,  4.98it/s]  7%|▋         | 23/334 [00:05<01:02,  4.98it/s]  7%|▋         | 24/334 [00:05<01:02,  4.97it/s]  7%|▋         | 25/334 [00:05<01:02,  4.97it/s]  8%|▊         | 26/334 [00:05<01:02,  4.96it/s]  8%|▊         | 27/334 [00:06<01:02,  4.93it/s]  8%|▊         | 28/334 [00:06<01:01,  4.95it/s]  9%|▊         | 29/334 [00:06<01:01,  4.93it/s]  9%|▉         | 30/334 [00:06<01:00,  4.99it/s]  9%|▉         | 31/334 [00:06<00:59,  5.07it/s] 10%|▉         | 32/334 [00:07<00:59,  5.08it/s] 10%|▉         | 33/334 [00:07<00:58,  5.14it/s] 10%|█         | 34/334 [00:07<00:58,  5.12it/s] 10%|█         | 35/334 [00:07<00:58,  5.12it/s] 11%|█         | 36/334 [00:07<00:57,  5.14it/s] 11%|█         | 37/334 [00:08<00:58,  5.08it/s] 11%|█▏        | 38/334 [00:08<00:58,  5.09it/s] 12%|█▏        | 39/334 [00:08<00:58,  5.03it/s] 12%|█▏        | 40/334 [00:08<00:58,  4.99it/s] 12%|█▏        | 41/334 [00:08<00:59,  4.96it/s] 13%|█▎        | 42/334 [00:09<00:58,  4.96it/s] 13%|█▎        | 43/334 [00:09<00:57,  5.02it/s] 13%|█▎        | 44/334 [00:09<00:57,  5.04it/s] 13%|█▎        | 45/334 [00:09<00:56,  5.09it/s] 14%|█▍        | 46/334 [00:09<00:55,  5.14it/s] 14%|█▍        | 47/334 [00:10<00:56,  5.04it/s] 14%|█▍        | 48/334 [00:10<00:56,  5.03it/s] 15%|█▍        | 49/334 [00:10<00:56,  5.04it/s] 15%|█▍        | 50/334 [00:10<00:55,  5.11it/s] 15%|█▌        | 51/334 [00:10<00:55,  5.10it/s] 16%|█▌        | 52/334 [00:10<00:54,  5.14it/s] 16%|█▌        | 53/334 [00:11<00:54,  5.11it/s] 16%|█▌        | 54/334 [00:11<00:54,  5.18it/s] 16%|█▋        | 55/334 [00:11<00:54,  5.11it/s] 17%|█▋        | 56/334 [00:11<00:55,  5.04it/s] 17%|█▋        | 57/334 [00:11<00:55,  5.01it/s] 17%|█▋        | 58/334 [00:12<00:55,  5.01it/s] 18%|█▊        | 59/334 [00:12<00:54,  5.00it/s] 18%|█▊        | 60/334 [00:12<00:54,  5.01it/s] 18%|█▊        | 61/334 [00:12<00:54,  4.96it/s] 19%|█▊        | 62/334 [00:12<00:54,  4.97it/s] 19%|█▉        | 63/334 [00:13<00:54,  4.93it/s] 19%|█▉        | 64/334 [00:13<00:54,  4.92it/s] 19%|█▉        | 65/334 [00:13<00:54,  4.93it/s] 20%|█▉        | 66/334 [00:13<00:54,  4.95it/s] 20%|██        | 67/334 [00:14<00:53,  4.96it/s] 20%|██        | 68/334 [00:14<00:53,  4.96it/s] 21%|██        | 69/334 [00:14<00:53,  4.96it/s] 21%|██        | 70/334 [00:14<00:53,  4.92it/s] 21%|██▏       | 71/334 [00:14<00:53,  4.93it/s] 22%|██▏       | 72/334 [00:15<00:53,  4.91it/s] 22%|██▏       | 73/334 [00:15<00:53,  4.90it/s] 22%|██▏       | 74/334 [00:15<00:52,  4.93it/s] 22%|██▏       | 75/334 [00:15<00:52,  4.95it/s] 23%|██▎       | 76/334 [00:15<00:52,  4.94it/s] 23%|██▎       | 77/334 [00:16<00:51,  4.95it/s] 23%|██▎       | 78/334 [00:16<00:51,  4.95it/s] 24%|██▎       | 79/334 [00:16<00:51,  4.97it/s] 24%|██▍       | 80/334 [00:16<00:51,  4.95it/s] 24%|██▍       | 81/334 [00:16<00:51,  4.96it/s] 25%|██▍       | 82/334 [00:17<00:50,  4.96it/s] 25%|██▍       | 83/334 [00:17<00:50,  5.00it/s] 25%|██▌       | 84/334 [00:17<00:50,  4.97it/s] 25%|██▌       | 85/334 [00:17<00:50,  4.93it/s] 26%|██▌       | 86/334 [00:17<00:50,  4.95it/s] 26%|██▌       | 87/334 [00:18<00:48,  5.04it/s] 26%|██▋       | 88/334 [00:18<00:48,  5.04it/s] 27%|██▋       | 89/334 [00:18<00:49,  4.92it/s] 27%|██▋       | 90/334 [00:18<00:49,  4.94it/s] 27%|██▋       | 91/334 [00:18<00:49,  4.92it/s]
+======================================================
+OPTIMIZED PARALLEL RUN — Thu Mar 19 09:55:38 AM EDT 2026
+======================================================
+PHASE 1: BiomedParse InstanSeg training
+=== branch_biomedparse: Building dataset ===
+Train: 6797
+Validation: 1423
+Test: 1445
+Total: 9665
+=== branch_biomedparse: Training on GPU 0 ===
+{('cldn18_brightfield', 6797)}
+Datasets available in  Validation
+{('cldn18_brightfield', 1423)}
+After filtering using:
+{('cldn18_brightfield', 1423)}
+=== branch_biomedparse: Exporting ===
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+/home/fernandosoto/claudin18_venv/lib/python3.12/site-packages/instanseg/utils/utils.py:366: FutureWarning: `optimize` is deprecated and has no effect. Use `with torch.jit.optimized_execution()` instead
+  traced_cpu = torch.jit.script(super_model, input_tensor[None, ])
+Generating InstanSeg_UNet
+Saved torchscript model to /home/fernandosoto/Documents/instanseg-brightfield-cell-model/models/exported/brightfield_cells_nuclei.pt
+=== branch_biomedparse: Validating ===
+2026-03-19 09:57:04 | INFO    | __main__ |   Membrane DAB:  0.2425 +/- 0.1972
+2026-03-19 09:57:25 | INFO    | __main__ |   Boundaries differ (IoU<0.8): 100.0%
+2026-03-19 09:57:25 | INFO    | __main__ | VALIDATION SUMMARY
+2026-03-19 09:57:25 | INFO    | __main__ | Test 2: Membrane DAB=0.2425, Cytoplasm=0.2521, Nucleus=0.2772
+2026-03-19 09:57:25 | INFO    | __main__ |   --> FAIL: Membrane <= Cytoplasm
+2026-03-19 09:57:25 | INFO    | __main__ |   --> PASS: Model learned real boundaries, not just expansion
+=== branch_biomedparse: DONE ===
+Thu Mar 19 09:57:27 AM EDT 2026
+
+PHASE 2: SegFormer (GPU0) + Teachers (GPU1) IN PARALLEL
+=== SegFormer on GPU 0 ===
+=== Teachers on GPU 1 ===
+2026-03-19 09:57:58 | INFO    | __main__ | ========================================================================
+2026-03-19 09:57:58 | INFO    | __main__ | Teacher predictions complete
+2026-03-19 09:57:58 | INFO    | __main__ | ========================================================================
+2026-03-19 09:57:58 | INFO    | __main__ | Tiles processed : 500
+2026-03-19 09:57:58 | INFO    | __main__ | Wall time       : 24.3s (0.05s/tile)
+2026-03-19 09:57:58 | INFO    | __main__ |   instanseg_fluoro     : 0 total cells
+2026-03-19 09:57:58 | INFO    | __main__ | Output directory : data/teacher_predictions
+2026-03-19 09:57:58 | INFO    | __main__ | ========================================================================
+2026-03-19 09:57:58 | INFO    | __main__ | Done.
+Model fluorescence_nuclei_and_cells version 0.1.1 already downloaded in /home/fernandosoto/claudin18_venv/lib/python3.12/site-packages/instanseg/utils/../bioimageio_models/, loading
+2026-03-19 11:37:11 | INFO    | __main__ | ============================================================
+2026-03-19 11:37:11 | INFO    | __main__ | Trainable parameters after unfreeze: 27,347,393
+2026-03-19 12:00:42 | INFO    | __main__ | Epoch   6/30 [phase 2]  train_loss=0.39043  val_loss=0.36044
+2026-03-19 12:00:42 | INFO    | __main__ |   -> New best val_loss=0.36044, saving checkpoint
+2026-03-19 12:23:13 | INFO    | __main__ | Epoch   7/30 [phase 2]  train_loss=0.35893  val_loss=0.35909
+2026-03-19 12:23:13 | INFO    | __main__ |   -> New best val_loss=0.35909, saving checkpoint
+2026-03-19 12:49:56 | INFO    | __main__ | Epoch   8/30 [phase 2]  train_loss=0.34987  val_loss=0.35661
+2026-03-19 12:49:56 | INFO    | __main__ |   -> New best val_loss=0.35661, saving checkpoint
+2026-03-19 13:12:24 | INFO    | __main__ | Epoch   9/30 [phase 2]  train_loss=0.34524  val_loss=0.34032
+2026-03-19 13:12:24 | INFO    | __main__ |   -> New best val_loss=0.34032, saving checkpoint
+=== SegFormer (GPU 0, batch=128) ===
+=== Teacher Consensus (GPU 1) ===
+Consensus masks available: 500
+Matched items: 485
+Train: 0
+Validation: 0
+Test: 485
+Final total: 485
+=== Teacher Consensus InstanSeg Training ===
+set()
+Datasets available in  Validation
+set()
+After filtering using:
+set()
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+/home/fernandosoto/claudin18_venv/lib/python3.12/site-packages/instanseg/utils/utils.py:366: FutureWarning: `optimize` is deprecated and has no effect. Use `with torch.jit.optimized_execution()` instead
+  traced_cpu = torch.jit.script(super_model, input_tensor[None, ])
+Generating InstanSeg_UNet
+Saved torchscript model to /home/fernandosoto/Documents/instanseg-brightfield-cell-model/models/exported/brightfield_cells_nuclei.pt
+2026-03-19 13:18:23 | INFO    | __main__ |   Membrane DAB:  0.2425 +/- 0.2064
+2026-03-19 13:18:44 | INFO    | __main__ |   Boundaries differ (IoU<0.8): 100.0%
+2026-03-19 13:18:44 | INFO    | __main__ | VALIDATION SUMMARY
+2026-03-19 13:18:44 | INFO    | __main__ | Test 2: Membrane DAB=0.2425, Cytoplasm=0.2537, Nucleus=0.2768
+2026-03-19 13:18:44 | INFO    | __main__ |   --> FAIL: Membrane <= Cytoplasm
+2026-03-19 13:18:44 | INFO    | __main__ |   --> PASS: Model learned real boundaries, not just expansion
+=== Teacher Consensus DONE ===

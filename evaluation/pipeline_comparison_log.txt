@@ -1,0 +1,82 @@
+16:09:48 | INFO    | Step 1: Setting up project directories
+16:09:48 | INFO    |   Copied tissue polygons: BC_ClassII_tissue.geojson -> /tmp/pipeline_comparison/v1_baseline/cell_data/BC_ClassII_tissue.geojson
+16:09:48 | INFO    |   Copied region annotations: BC_ClassII_regions.geojson -> /tmp/pipeline_comparison/v1_baseline/preprocessing/region_annotations/BC_ClassII_regions.geojson
+16:09:48 | INFO    |   Copied tissue polygons: BC_ClassIII_tissue.geojson -> /tmp/pipeline_comparison/v1_baseline/cell_data/BC_ClassIII_tissue.geojson
+16:09:48 | INFO    |   Copied region annotations: BC_ClassIII_regions.geojson -> /tmp/pipeline_comparison/v1_baseline/preprocessing/region_annotations/BC_ClassIII_regions.geojson
+16:09:48 | INFO    |   Copied tissue polygons: BC_ClassII_tissue.geojson -> /tmp/pipeline_comparison/v2_cells_nuclei/cell_data/BC_ClassII_tissue.geojson
+16:09:48 | INFO    |   Copied region annotations: BC_ClassII_regions.geojson -> /tmp/pipeline_comparison/v2_cells_nuclei/preprocessing/region_annotations/BC_ClassII_regions.geojson
+16:09:48 | INFO    |   Copied tissue polygons: BC_ClassIII_tissue.geojson -> /tmp/pipeline_comparison/v2_cells_nuclei/cell_data/BC_ClassIII_tissue.geojson
+16:09:48 | INFO    |   Copied region annotations: BC_ClassIII_regions.geojson -> /tmp/pipeline_comparison/v2_cells_nuclei/preprocessing/region_annotations/BC_ClassIII_regions.geojson
+16:09:48 | INFO    | Step 2: Installing our model in InstanSeg cache
+16:09:48 | INFO    |   Installed model: /home/fernandosoto/Documents/instanseg-brightfield-cell-model/models/exported/brightfield_cells_nuclei.pt -> /home/fernandosoto/claudin18_venv/lib/python3.12/site-packages/instanseg/bioimageio_models/brightfield_cells_nuclei/0.1.0/instanseg.pt
+16:09:48 | INFO    | Step 3: SKIPPED (--skip-baseline)
+16:09:48 | INFO    | Step 4: Running our model pipeline (brightfield_cells_nuclei)
+16:09:48 | INFO    | ============================================================
+16:09:48 | INFO    |   Running pipeline: v2-ours
+16:09:48 | INFO    |   Model: brightfield_cells_nuclei
+16:09:48 | INFO    |   Project dir: /tmp/pipeline_comparison/v2_cells_nuclei
+16:09:48 | INFO    |   Command: /home/fernandosoto/claudin18_venv/bin/python /home/fernandosoto/Documents/cldn18-pathology-pipeline-main (3)/cldn18-pathology-pipeline-main/scripts/instanseg_batched.py --slides-dir /tmp/bc_slides --project-dir /tmp/pipeline_comparison/v2_cells_nuclei --output-format parquet --device cuda:0 --model brightfield_cells_nuclei --batch-size 128 --tile-size 512 --padding 80 --dedup-mode hybrid --dedup-radius 5 --optimize off --no-skip-measurements
+16:09:48 | INFO    | ============================================================
+16:09:51 | ERROR   |   v2-ours FAILED (exit code 1) after 2.9s
+16:09:51 | ERROR   | V2 pipeline failed. Continuing with comparison anyway.
+16:09:51 | INFO    | Step 5: Reading pipeline outputs
+16:09:51 | WARNING |   Missing: /tmp/pipeline_comparison/v1_baseline/cell_data/BC_ClassII_cells.parquet
+16:09:51 | WARNING |   Missing: /tmp/pipeline_comparison/v1_baseline/cell_data/BC_ClassIII_cells.parquet
+16:09:51 | WARNING |   Missing: /tmp/pipeline_comparison/v2_cells_nuclei/cell_data/BC_ClassII_cells.parquet
+16:09:51 | WARNING |   Missing: /tmp/pipeline_comparison/v2_cells_nuclei/cell_data/BC_ClassIII_cells.parquet
+16:09:51 | INFO    | Step 6: SKIPPED (--skip-membrane or no v2 data)
+16:09:51 | INFO    | Step 7: Computing comparison metrics
+16:09:51 | INFO    | Step 8: Saving results
+16:09:51 | INFO    |   Saved comparison JSON: /home/fernandosoto/Documents/instanseg-brightfield-cell-model/evaluation/pipeline_comparison/comparison_results.json
+16:09:51 | INFO    |   Saved summary text: /home/fernandosoto/Documents/instanseg-brightfield-cell-model/evaluation/pipeline_comparison/comparison_summary.txt
+============================================================
+  PIPELINE COMPARISON: BC Control Slides
+  Baseline (brightfield_nuclei) vs Ours (brightfield_cells_nuclei)
+============================================================
+
+  [v2-ours] ============================================================
+  [v2-ours]   InstanSeg Batched Inference v3.4
+  [v2-ours] ============================================================
+  [v2-ours]   Device:         cuda:0
+  [v2-ours]   Batch size:     128
+  [v2-ours]   Tile size:      512
+  [v2-ours]   Padding:        80 (step=352)
+  [v2-ours]   I/O threads:    16
+  [v2-ours]   CPU workers:    24
+  [v2-ours] 
+  [v2-ours]   Loading InstanSeg model: brightfield_cells_nuclei...
+  [v2-ours] Traceback (most recent call last):
+  [v2-ours]   File "/home/fernandosoto/Documents/cldn18-pathology-pipeline-main (3)/cldn18-pathology-pipeline-main/scripts/instanseg_batched.py", line 2294, in <module>
+  [v2-ours]     main()
+  [v2-ours]   File "/home/fernandosoto/Documents/cldn18-pathology-pipeline-main (3)/cldn18-pathology-pipeline-main/scripts/instanseg_batched.py", line 1838, in main
+  [v2-ours]     model = InstanSeg(args.model, device=str(device))
+  [v2-ours]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [v2-ours]   File "/home/fernandosoto/claudin18_venv/lib/python3.12/site-packages/instanseg/inference_class.py", line 44, in __init__
+  [v2-ours]     self.instanseg = download_model(model_type, verbose = self.verbose)
+  [v2-ours]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [v2-ours]   File "/home/fernandosoto/claudin18_venv/lib/python3.12/site-packages/instanseg/utils/utils.py", line 470, in download_model
+  [v2-ours]     raise Exception(
+  [v2-ours] Exception: Model /home/fernandosoto/claudin18_venv/lib/python3.12/site-packages/instanseg/utils/../bioimageio_models/brightfield_cells_nuclei/instanseg.pt version None not found in the release data or locally. Please check the model name and try again.
+
+==========================================================================================
+PIPELINE COMPARISON: BASELINE vs OUR MODEL
+==========================================================================================
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  Slide: BC_ClassII
+  V1 (baseline) cells:          0
+  V2 (our model) cells:         0
+
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  Slide: BC_ClassIII
+  V1 (baseline) cells:          0
+  V2 (our model) cells:         0
+
+
+==========================================================================================
+
+  Total time: 3s (0.1min)
+  Results: /home/fernandosoto/Documents/instanseg-brightfield-cell-model/evaluation/pipeline_comparison/comparison_results.json
+  Summary: /home/fernandosoto/Documents/instanseg-brightfield-cell-model/evaluation/pipeline_comparison/comparison_summary.txt
+

@@ -1,0 +1,94 @@
+============================================================
+  PIPELINE COMPARISON: BC Control Slides
+  Baseline (brightfield_nuclei) vs Ours (brightfield_cells_nuclei)
+============================================================
+
+  [v2-ours] ============================================================
+  [v2-ours]   InstanSeg Batched Inference v3.4
+  [v2-ours] ============================================================
+  [v2-ours]   Device:         cuda:0
+  [v2-ours]   Batch size:     128
+  [v2-ours]   Tile size:      512
+  [v2-ours]   Padding:        80 (step=352)
+  [v2-ours]   I/O threads:    16
+  [v2-ours]   CPU workers:    24
+  [v2-ours] 
+  [v2-ours]   Loading InstanSeg model: brightfield_cells_nuclei...
+  [v2-ours]   Model loaded on cuda:0
+  [v2-ours]   Model pixel size: 0.5 um/px
+  [v2-ours] 
+  [v2-ours]   GPU warmed up (512x512, bs=4)
+  [v2-ours] 
+  [v2-ours]   Output format: Parquet (QuPath-free)
+  [v2-ours]   Slides dir:    /tmp/bc_slides
+  [v2-ours]   Project dir:   /tmp/pipeline_comparison/v2_cells_nuclei
+  [v2-ours]   Slides found:  2
+  [v2-ours] 
+  [v2-ours]   Runtime scheduler: 2 normal slide(s) first, 0 giant slide(s) deferred
+  [v2-ours] 
+  [v2-ours]   [1/2] BC_ClassII.ndpi
+  [v2-ours]     Dims: 99840x82944, base: 0.2299 um/px
+  [v2-ours]     Read level: 1 (ds=2.0, 0.4598 um/px, model=0.5 um/px, ratio=0.92)
+  [v2-ours]     Rescale: 512px -> 471px to match model resolution
+  [v2-ours]     Tile: 512px @ level 1, footprint=1024px @ L0, step=704px @ L0
+  [v2-ours]     Tissue annotations: 14
+  [v2-ours]     Computing normalization stats from annotation thumbnails...
+  [v2-ours]     Norm stats (per-channel): lo=[0.2627, 0.1529, 0.1333], hi=[0.9137, 0.9137, 0.9451]
+  [v2-ours]     Tiles: 1232 (from 15882 bbox, filtered by annotation + tissue mask)
+  [v2-ours]     [128/1,232] batch 1/10, 25 t/s (inferred: 128, blank: 0)
+  [v2-ours]     [1,232/1,232] batch 10/10, 51 t/s (inferred: 1232, blank: 0)
+  [v2-ours]     Inference done in 24.2s. 1152/1232 tiles already collected. Finishing...
+  [v2-ours]     Collected: 0 total cells, 0 in annotations (remaining: 0.0s)
+  [v2-ours]     === Summary ===
+  [v2-ours]     Time: 24.2s total (inference: 24.2s, collect: 0.0s)
+  [v2-ours]     Tiles: 1232 inferred, 0 blank-skipped
+  [v2-ours]     Cells: 0
+  [v2-ours]     Operator summary: 1/2 normal slides complete, 0 giant slide(s) still queued
+  [v2-ours] 
+  [v2-ours]   [2/2] BC_ClassIII.ndpi
+  [v2-ours]     Dims: 97920x85248, base: 0.2299 um/px
+  [v2-ours]     Read level: 1 (ds=2.0, 0.4598 um/px, model=0.5 um/px, ratio=0.92)
+  [v2-ours]     Rescale: 512px -> 471px to match model resolution
+  [v2-ours]     Tile: 512px @ level 1, footprint=1024px @ L0, step=704px @ L0
+  [v2-ours]     Tissue annotations: 22
+  [v2-ours]     Computing normalization stats from annotation thumbnails...
+  [v2-ours]     Norm stats (per-channel): lo=[0.2627, 0.1490, 0.1216], hi=[0.9137, 0.9137, 0.9451]
+  [v2-ours]     Tiles: 1669 (from 17122 bbox, filtered by annotation + tissue mask)
+  [v2-ours]     [128/1,669] batch 1/14, 36 t/s (inferred: 128, blank: 0)
+  [v2-ours]     [1,408/1,669] batch 11/14, 83 t/s (inferred: 1408, blank: 0)
+  [v2-ours]     [1,669/1,669] batch 14/14, 75 t/s (inferred: 1669, blank: 0)
+  [v2-ours]     Inference done in 22.4s. 1663/1669 tiles already collected. Finishing...
+  [v2-ours]     Collected: 0 total cells, 0 in annotations (remaining: 0.0s)
+  [v2-ours]     === Summary ===
+  [v2-ours]     Time: 22.4s total (inference: 22.4s, collect: 0.0s)
+  [v2-ours]     Tiles: 1669 inferred, 0 blank-skipped
+  [v2-ours]     Cells: 0
+  [v2-ours]     Operator summary: 2/2 normal slides complete, 0 giant slide(s) still queued
+  [v2-ours] 
+  [v2-ours] ============================================================
+  [v2-ours]   Complete: 2 slides processed, 0 skipped
+  [v2-ours]   Total cells detected: 0
+  [v2-ours] ============================================================
+
+==========================================================================================
+PIPELINE COMPARISON: BASELINE vs OUR MODEL
+==========================================================================================
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  Slide: BC_ClassII
+  V1 (baseline) cells:          0
+  V2 (our model) cells:         0
+
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  Slide: BC_ClassIII
+  V1 (baseline) cells:          0
+  V2 (our model) cells:         0
+
+
+==========================================================================================
+
+  Total time: 81s (1.3min)
+  Results: /home/fernandosoto/Documents/instanseg-brightfield-cell-model/evaluation/pipeline_comparison/comparison_results.json
+  Summary: /home/fernandosoto/Documents/instanseg-brightfield-cell-model/evaluation/pipeline_comparison/comparison_summary.txt
+

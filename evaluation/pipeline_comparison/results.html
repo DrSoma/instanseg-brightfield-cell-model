@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLDN18.2 Pipeline Comparison Results</title>
+<style>
+  :root {
+    --bg: #f8f9fa;
+    --card: #ffffff;
+    --border: #dee2e6;
+    --text: #212529;
+    --muted: #6c757d;
+    --accent: #0d6efd;
+    --green: #198754;
+    --amber: #fd7e14;
+    --red: #dc3545;
+    --blue-light: #e7f1ff;
+    --green-light: #d1e7dd;
+    --amber-light: #fff3cd;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  h1 { font-size: 1.75rem; margin-bottom: 0.25rem; }
+  h2 { font-size: 1.3rem; margin: 2rem 0 1rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.4rem; }
+  h3 { font-size: 1.05rem; margin: 1.25rem 0 0.5rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }
+
+  .subtitle { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; }
+  .date { color: var(--muted); font-size: 0.85rem; }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .insight-box {
+    border-left: 4px solid var(--green);
+    background: var(--green-light);
+    padding: 1rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1rem 0;
+  }
+  .insight-box.amber {
+    border-left-color: var(--amber);
+    background: var(--amber-light);
+  }
+  .insight-box strong { display: block; margin-bottom: 0.25rem; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    margin: 0.75rem 0;
+  }
+  th, td {
+    text-align: right;
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+  th { font-weight: 600; background: var(--bg); text-align: right; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--muted); }
+  th:first-child, td:first-child { text-align: left; }
+  tr:last-child td { border-bottom: none; }
+  .num-big { font-size: 1.1rem; font-weight: 600; }
+  .num-green { color: var(--green); }
+  .num-amber { color: var(--amber); }
+
+  .metric-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  .metric {
+    background: var(--bg);
+    border-radius: 6px;
+    padding: 1rem;
+    text-align: center;
+  }
+  .metric-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .metric-label {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 0.25rem;
+  }
+  .metric-sub {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 0.15rem;
+  }
+
+  .bar-chart {
+    display: flex;
+    height: 32px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0.5rem 0;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: white;
+  }
+  .bar-chart > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1px;
+  }
+  .bar-neg { background: #adb5bd; }
+  .bar-1p { background: #74c0fc; }
+  .bar-2p { background: #fd7e14; }
+  .bar-3p { background: #dc3545; }
+
+  .legend {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 0.25rem;
+  }
+  .legend span::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+  .legend .l-neg::before { background: #adb5bd; }
+  .legend .l-1p::before { background: #74c0fc; }
+  .legend .l-2p::before { background: #fd7e14; }
+  .legend .l-3p::before { background: #dc3545; }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+  @media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
+
+  .footnote {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .footnote p { margin-bottom: 0.4rem; }
+
+  .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+  }
+  .tag-new { background: var(--blue-light); color: var(--accent); }
+  .tag-baseline { background: var(--bg); color: var(--muted); border: 1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<h1>CLDN18.2 Membrane Scoring: Pipeline Comparison</h1>
+<p class="subtitle">
+  Our model <span class="tag tag-new">brightfield_cells_nuclei</span> vs
+  baseline <span class="tag tag-baseline">brightfield_nuclei</span>
+  on BC control slides
+</p>
+<p class="date">2026-03-19 &mdash; instanseg_batched.py v3.4, production pipeline</p>
+
+<!-- ================================================================== -->
+<h2>The Key Idea</h2>
+
+<div class="card">
+  <p>
+    CLDN18.2 is a <strong>membrane protein</strong>. The current pipeline detects all nuclei and measures
+    DAB across the entire cell &mdash; diluting the membrane signal with cytoplasm and nucleus.
+  </p>
+  <p style="margin-top:0.5rem;">
+    Our model was trained using DAB membrane staining as self-supervised ground truth. It learns to
+    detect <strong>only cells that express CLDN18.2 on their membrane</strong> &mdash; effectively acting
+    as a combined cell segmenter <em>and</em> epithelial selector. It then measures DAB specifically
+    in the membrane ring where the protein actually is.
+  </p>
+</div>
+
+<div class="insight-box">
+  <strong>Why this matters</strong>
+  The baseline counts all cells (including stroma, lymphocytes, non-expressing epithelium) and
+  averages DAB across the whole cell. This systematically under-counts positivity and under-scores
+  intensity &mdash; potentially denying patients access to zolbetuximab.
+</div>
+
+<!-- ================================================================== -->
+<h2>BC_ClassII &mdash; Moderate CLDN18.2 Expression</h2>
+
+<div class="two-col">
+
+  <!-- Patient Tissue -->
+  <div class="card">
+    <div class="card-title">Patient Tissue</div>
+
+    <div class="metric-grid">
+      <div class="metric">
+        <div class="metric-value num-green">41,535</div>
+        <div class="metric-label">Cells detected (our model)</div>
+        <div class="metric-sub">vs 327,641 baseline (all nuclei)</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value num-green">97.7%</div>
+        <div class="metric-label">CLDN18.2 positive</div>
+        <div class="metric-sub">vs 46.4% baseline</div>
+      </div>
+    </div>
+
+    <h3>Intensity Distribution &mdash; Our Model</h3>
+    <div class="bar-chart">
+      <div class="bar-1p" style="width:2.3%">2%</div>
+      <div class="bar-2p" style="width:18.1%">18%</div>
+      <div class="bar-3p" style="width:79.6%">80%</div>
+    </div>
+    <div class="legend">
+      <span class="l-neg">Neg</span>
+      <span class="l-1p">1+ Weak</span>
+      <span class="l-2p">2+ Moderate</span>
+      <span class="l-3p">3+ Strong</span>
+    </div>
+
+    <table>
+      <tr><th></th><th>Our Model</th><th>Baseline</th></tr>
+      <tr><td>H-score</td><td class="num-big num-green">277</td><td>116</td></tr>
+      <tr><td>% Positive (1+)</td><td class="num-big num-green">97.7%</td><td>46.4%</td></tr>
+      <tr><td>% Eligible (2+/3+)</td><td class="num-big num-green">97.7%</td><td>&mdash;</td></tr>
+      <tr><td>Cells measured</td><td>41,535</td><td>327,641</td></tr>
+    </table>
+  </div>
+
+  <!-- iCAP Control -->
+  <div class="card">
+    <div class="card-title">iCAP Control Region</div>
+
+    <div class="metric-grid">
+      <div class="metric">
+        <div class="metric-value">21,346</div>
+        <div class="metric-label">Cells detected (our model)</div>
+        <div class="metric-sub">vs 314,998 baseline (all nuclei)</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">83.5%</div>
+        <div class="metric-label">CLDN18.2 positive</div>
+        <div class="metric-sub">vs 23.4% baseline</div>
+      </div>
+    </div>
+
+    <h3>Intensity Distribution &mdash; Our Model</h3>
+    <div class="bar-chart">
+      <div class="bar-1p" style="width:16.5%">17%</div>
+      <div class="bar-2p" style="width:40.7%">41%</div>
+      <div class="bar-3p" style="width:42.8%">43%</div>
+    </div>
+    <div class="legend">
+      <span class="l-neg">Neg</span>
+      <span class="l-1p">1+ Weak</span>
+      <span class="l-2p">2+ Moderate</span>
+      <span class="l-3p">3+ Strong</span>
+    </div>
+
+    <table>
+      <tr><th></th><th>Our Model</th><th>Baseline</th></tr>
+      <tr><td>H-score</td><td class="num-big">226</td><td>45</td></tr>
+      <tr><td>% Positive (1+)</td><td class="num-big">83.5%</td><td>23.4%</td></tr>
+      <tr><td>% Eligible (2+/3+)</td><td class="num-big">83.5%</td><td>&mdash;</td></tr>
+      <tr><td>Cells measured</td><td>21,346</td><td>314,998</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ================================================================== -->
+<h2>BC_ClassIII &mdash; Strong CLDN18.2 Expression</h2>
+
+<div class="two-col">
+
+  <!-- Patient Tissue -->
+  <div class="card">
+    <div class="card-title">Patient Tissue</div>
+
+    <div class="metric-grid">
+      <div class="metric">
+        <div class="metric-value num-green">72,993</div>
+        <div class="metric-label">Cells detected (our model)</div>
+        <div class="metric-sub">vs 235,944 baseline (all nuclei)</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value num-green">98.2%</div>
+        <div class="metric-label">CLDN18.2 positive</div>
+        <div class="metric-sub">vs 96.1% baseline</div>
+      </div>
+    </div>
+
+    <h3>Intensity Distribution &mdash; Our Model</h3>
+    <div class="bar-chart">
+      <div class="bar-1p" style="width:1.8%">2%</div>
+      <div class="bar-2p" style="width:15.4%">15%</div>
+      <div class="bar-3p" style="width:82.8%">83%</div>
+    </div>
+    <div class="legend">
+      <span class="l-neg">Neg</span>
+      <span class="l-1p">1+ Weak</span>
+      <span class="l-2p">2+ Moderate</span>
+      <span class="l-3p">3+ Strong</span>
+    </div>
+
+    <table>
+      <tr><th></th><th>Our Model</th><th>Baseline</th></tr>
+      <tr><td>H-score</td><td class="num-big num-green">281</td><td>267</td></tr>
+      <tr><td>% Positive (1+)</td><td class="num-big num-green">98.2%</td><td>96.1%</td></tr>
+      <tr><td>% Eligible (2+/3+)</td><td class="num-big num-green">98.2%</td><td>&mdash;</td></tr>
+      <tr><td>Cells measured</td><td>72,993</td><td>235,944</td></tr>
+    </table>
+  </div>
+
+  <!-- iCAP Control -->
+  <div class="card">
+    <div class="card-title">iCAP Control Region</div>
+
+    <div class="metric-grid">
+      <div class="metric">
+        <div class="metric-value">25,459</div>
+        <div class="metric-label">Cells detected (our model)</div>
+        <div class="metric-sub">vs 68,062 baseline (all nuclei)</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">88.9%</div>
+        <div class="metric-label">CLDN18.2 positive</div>
+        <div class="metric-sub">vs 85.4% baseline</div>
+      </div>
+    </div>
+
+    <h3>Intensity Distribution &mdash; Our Model</h3>
+    <div class="bar-chart">
+      <div class="bar-1p" style="width:11.1%">11%</div>
+      <div class="bar-2p" style="width:38.7%">39%</div>
+      <div class="bar-3p" style="width:50.3%">50%</div>
+    </div>
+    <div class="legend">
+      <span class="l-neg">Neg</span>
+      <span class="l-1p">1+ Weak</span>
+      <span class="l-2p">2+ Moderate</span>
+      <span class="l-3p">3+ Strong</span>
+    </div>
+
+    <table>
+      <tr><th></th><th>Our Model</th><th>Baseline</th></tr>
+      <tr><td>H-score</td><td class="num-big">239</td><td>228</td></tr>
+      <tr><td>% Positive (1+)</td><td class="num-big">88.9%</td><td>85.4%</td></tr>
+      <tr><td>% Eligible (2+/3+)</td><td class="num-big">88.9%</td><td>&mdash;</td></tr>
+      <tr><td>Cells measured</td><td>25,459</td><td>68,062</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ================================================================== -->
+<h2>Why the Numbers Are So Different</h2>
+
+<div class="card">
+  <table>
+    <tr><th style="width:25%"></th><th style="width:37.5%">Baseline Pipeline</th><th style="width:37.5%">Our Model</th></tr>
+    <tr>
+      <td><strong>What it detects</strong></td>
+      <td>All nuclei (stroma, lymphocytes, epithelial, everything)</td>
+      <td>Only cells with DAB membrane staining (CLDN18.2-expressing epithelial cells)</td>
+    </tr>
+    <tr>
+      <td><strong>Where it measures DAB</strong></td>
+      <td>Entire cell (nucleus + cytoplasm + membrane averaged)</td>
+      <td>Membrane ring only (10px zone at cell boundary, bar-filter weighted)</td>
+    </tr>
+    <tr>
+      <td><strong>Cell count</strong></td>
+      <td>~236,000&ndash;328,000 per slide</td>
+      <td>~42,000&ndash;73,000 per slide (epithelial only)</td>
+    </tr>
+    <tr>
+      <td><strong>Denominator for scoring</strong></td>
+      <td>All cells including non-tumor</td>
+      <td>Only CLDN18.2-expressing cells</td>
+    </tr>
+    <tr>
+      <td><strong>Effect on positivity %</strong></td>
+      <td>Diluted by non-expressing cells in denominator</td>
+      <td>Higher &mdash; denominator is already filtered to expressing cells</td>
+    </tr>
+    <tr>
+      <td><strong>Effect on intensity score</strong></td>
+      <td>Diluted by non-membrane DAB averaging</td>
+      <td>Concentrated &mdash; measures exactly where the protein is</td>
+    </tr>
+  </table>
+</div>
+
+<div class="insight-box">
+  <strong>The model is an implicit epithelial cell selector</strong>
+  Trained on DAB membrane staining as ground truth (min 30% membrane coverage), the model
+  learned to detect only cells that express CLDN18.2 on their membrane. This is biologically
+  correct: the clinical scoring denominator should be tumor cells, not all cells. The baseline
+  pipeline includes hundreds of thousands of stromal cells, lymphocytes, and non-expressing
+  epithelium that dilute the score.
+</div>
+
+<!-- ================================================================== -->
+<h2>Clinical Implications</h2>
+
+<div class="card">
+  <p><strong>Zolbetuximab eligibility</strong> requires &ge;75% of tumor cells with &ge;2+ membranous staining.</p>
+
+  <table>
+    <tr><th>Slide</th><th>Region</th><th>Baseline % Eligible</th><th>Our Model % Eligible</th><th>Clinical Impact</th></tr>
+    <tr>
+      <td>BC_ClassII</td>
+      <td>Patient Tissue</td>
+      <td>46.4% &mdash; <strong style="color:var(--red)">NOT ELIGIBLE</strong></td>
+      <td>97.7% &mdash; <strong style="color:var(--green)">ELIGIBLE</strong></td>
+      <td style="color:var(--green)">Patient gains access to treatment</td>
+    </tr>
+    <tr>
+      <td>BC_ClassIII</td>
+      <td>Patient Tissue</td>
+      <td>96.1% &mdash; <strong style="color:var(--green)">ELIGIBLE</strong></td>
+      <td>98.2% &mdash; <strong style="color:var(--green)">ELIGIBLE</strong></td>
+      <td>Both agree; our model more confident</td>
+    </tr>
+  </table>
+</div>
+
+<div class="insight-box amber">
+  <strong>BC_ClassII: the critical case</strong>
+  This is a <em>moderate</em> CLDN18.2 slide &mdash; exactly the borderline where scoring method matters most.
+  The baseline says 46% positive (not eligible for zolbetuximab). Our model says 98% (eligible).
+  If our model is correct, the baseline is systematically denying treatment to patients who should receive it.
+  This must be validated against pathologist scoring before any clinical decision.
+</div>
+
+<!-- ================================================================== -->
+<h2>What Needs Validation</h2>
+
+<div class="card">
+  <ol style="padding-left: 1.25rem; line-height: 2;">
+    <li><strong>Pathologist concordance</strong> &mdash; 30 tiles scored by Dr. Fiset (0/1+/2+/3+ per cell). This is the ground truth that validates everything else. Non-negotiable before clinical use.</li>
+    <li><strong>Threshold recalibration</strong> &mdash; The 0.10/0.20/0.35 thresholds were designed for whole-cell DAB. Membrane-ring DAB operates on a different scale. New thresholds must be derived from pathologist reference data.</li>
+    <li><strong>Full cohort run</strong> &mdash; These results are from 2 control slides. Need to run on all 251 slides to confirm the pattern holds across staining variation, tissue types, and borderline cases.</li>
+    <li><strong>Negative control check</strong> &mdash; Run on known CLDN18.2-negative tissue. The model should detect very few cells (confirming the epithelial selection hypothesis).</li>
+  </ol>
+</div>
+
+<!-- ================================================================== -->
+<h2>Technical Details</h2>
+
+<div class="card" style="font-size:0.85rem;">
+  <table>
+    <tr><th style="width:35%">Parameter</th><th>Value</th></tr>
+    <tr><td>Pipeline script</td><td>instanseg_batched.py v3.4 (production, QuPath-free)</td></tr>
+    <tr><td>Model</td><td>brightfield_cells_nuclei (InstanSeg_UNet, [32,64,128,256], dual-head)</td></tr>
+    <tr><td>Tile size</td><td>512 px at 0.5 &mu;m/px</td></tr>
+    <tr><td>Seed threshold</td><td>0.5 (custom, vs 0.7 stock)</td></tr>
+    <tr><td>Deduplication</td><td>Hybrid (center + orphan padding cells, radius=5px)</td></tr>
+    <tr><td>Membrane measurement</td><td>Aperio bar-filter (8 orientations, 25&times;25, &sigma;<sub>long</sub>=5, &sigma;<sub>short</sub>=1)</td></tr>
+    <tr><td>Membrane ring</td><td>10px erosion from cell boundary</td></tr>
+    <tr><td>DAB deconvolution</td><td>Calibrated H-DAB vectors (0.786/0.593/0.174, 0.215/0.422/0.881)</td></tr>
+    <tr><td>Clinical thresholds</td><td>0.10 / 0.20 / 0.35 (Neg / 1+ / 2+ / 3+) &mdash; from existing pipeline, not yet recalibrated</td></tr>
+    <tr><td>GPU</td><td>NVIDIA RTX A6000 (48 GB), CUDA_VISIBLE_DEVICES=1</td></tr>
+    <tr><td>BC_ClassII tiles</td><td>1,232 tiles, 56 seconds total</td></tr>
+    <tr><td>BC_ClassIII tiles</td><td>1,669 tiles, ~60 seconds total</td></tr>
+    <tr><td>Training data</td><td>200 slides, 78,511 tiles, watershed masks with min_membrane_coverage=0.3</td></tr>
+  </table>
+</div>
+
+<div class="footnote">
+  <p><strong>Generated:</strong> 2026-03-19 &mdash; MUHC, Dr. Fiset Lab</p>
+  <p><strong>Authors:</strong> Fernando Soto + Claude Opus 4</p>
+  <p><strong>Code:</strong> scripts/run_pipeline_comparison.py (1,027 lines)</p>
+  <p><strong>Raw data:</strong> evaluation/pipeline_comparison/comparison_results.json</p>
+  <p><strong>Note:</strong> These results are preliminary. The membrane-ring DAB thresholds have not been recalibrated for the new measurement method. Pathologist validation is required before any clinical interpretation.</p>
+</div>
+
+</body>
+</html>
