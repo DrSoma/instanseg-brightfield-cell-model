@@ -39,14 +39,15 @@ from scipy.ndimage import gaussian_filter, maximum_filter
 # Configuration
 # ---------------------------------------------------------------------------
 
-OUTPUT_WIDTH = 2560
-GAUSSIAN_SIGMA = 1.5
-GAP_FILL_SIZE = 5
+OUTPUT_WIDTH = 8192              # 3.2x higher resolution than before (was 2560)
+GAUSSIAN_SIGMA = 3.0             # wider smoothing for continuity (was 1.5)
+GAP_FILL_SIZE = 12               # larger gap filling radius (was 5)
+CELL_DOT_RADIUS = 4              # draw each cell as a filled circle (NEW)
 OVERLAY_ALPHA = 0.55
-TISSUE_THRESHOLD = 220  # grayscale; below = tissue
+TISSUE_THRESHOLD = 220           # grayscale; below = tissue
 PERCENTILE_LO = 2
 PERCENTILE_HI = 98
-MIN_DISPLAY_THRESHOLD = 0.01  # suppress near-zero heatmap pixels
+MIN_DISPLAY_THRESHOLD = 0.005    # lower threshold to show faint cells (was 0.01)
 
 OUTPUT_DIR = Path("/home/fernandosoto/Downloads")
 
@@ -171,12 +172,13 @@ def scatter_to_grid(
     heatmap = np.zeros((height, width), dtype=np.float64)
     counts = np.zeros((height, width), dtype=np.float64)
 
-    # Vectorized binning -- avoid Python loop over 100k cells
+    # Vectorized binning with filled circle dots for visibility
     px = (cx * scale).astype(np.int64)
     py = (cy * scale).astype(np.int64)
 
-    # Filter in-bounds
-    mask = (px >= 0) & (px < width) & (py >= 0) & (py < height)
+    # Filter in-bounds (with margin for dot radius)
+    r = CELL_DOT_RADIUS
+    mask = (px >= r) & (px < width - r) & (py >= r) & (py < height - r)
     px = px[mask]
     py = py[mask]
     val = values[mask]
@@ -184,10 +186,20 @@ def scatter_to_grid(
     # Replace NaN with 0 for accumulation
     nan_mask = np.isnan(val)
     val_clean = np.where(nan_mask, 0.0, val)
+    valid_flags = (~nan_mask).astype(np.float64)
 
-    # Use np.add.at for scatter-add (no race conditions)
-    np.add.at(heatmap, (py, px), val_clean)
-    np.add.at(counts, (py, px), (~nan_mask).astype(np.float64))
+    # Draw each cell as a filled circle (radius=CELL_DOT_RADIUS pixels)
+    # Pre-compute circle offsets
+    yy, xx = np.mgrid[-r:r+1, -r:r+1]
+    circle_mask = (xx**2 + yy**2) <= r**2
+    dy_offsets = yy[circle_mask]
+    dx_offsets = xx[circle_mask]
+
+    for i in range(len(px)):
+        ys = py[i] + dy_offsets
+        xs = px[i] + dx_offsets
+        heatmap[ys, xs] += val_clean[i]
+        counts[ys, xs] += valid_flags[i]
 
     if mode == "mean":
         valid = counts > 0

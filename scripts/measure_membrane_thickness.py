@@ -98,14 +98,14 @@ TILE_SIZE_L0 = 1024     # Group cells into tiles of this size at level 0
 TILE_PADDING_L0 = 80    # Padding around tiles
 
 # Heatmap constants
-HEATMAP_WIDTH = 2560
-GAUSSIAN_SIGMA = 1.5
-GAP_FILL_SIZE = 5
+HEATMAP_WIDTH = 8192
+GAUSSIAN_SIGMA = 3.0
+GAP_FILL_SIZE = 12
 OVERLAY_ALPHA = 0.55
 TISSUE_THRESHOLD = 220
 PERCENTILE_LO = 2
 PERCENTILE_HI = 98
-MIN_DISPLAY_THRESHOLD = 0.01
+MIN_DISPLAY_THRESHOLD = 0.005
 
 
 # ── Stain Deconvolution ─────────────────────────────────────────────────────
@@ -522,16 +522,26 @@ def scatter_to_grid(
     px = (cx * scale).astype(np.int64)
     py = (cy * scale).astype(np.int64)
 
-    mask = (px >= 0) & (px < width) & (py >= 0) & (py < height)
+    r = 4  # cell dot radius in heatmap pixels
+    mask = (px >= r) & (px < width - r) & (py >= r) & (py < height - r)
     px = px[mask]
     py = py[mask]
     val = values[mask]
 
     nan_mask = np.isnan(val)
     val_clean = np.where(nan_mask, 0.0, val)
+    valid_flags = (~nan_mask).astype(np.float64)
 
-    np.add.at(heatmap, (py, px), val_clean)
-    np.add.at(counts, (py, px), (~nan_mask).astype(np.float64))
+    # Draw each cell as a filled circle for visibility
+    yy, xx = np.mgrid[-r:r+1, -r:r+1]
+    circle = (xx**2 + yy**2) <= r**2
+    dy = yy[circle]
+    dx = xx[circle]
+    for i in range(len(px)):
+        ys = py[i] + dy
+        xs = px[i] + dx
+        heatmap[ys, xs] += val_clean[i]
+        counts[ys, xs] += valid_flags[i]
 
     if mode == "mean":
         valid = counts > 0
