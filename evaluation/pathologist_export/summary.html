@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CLDN18.2 Pathologist Export — 30-Tile Review</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         margin: 20px; background: #f5f5f5; color: #333; }
+  h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px; }
+  h2 { color: #2c3e50; margin-top: 30px; }
+  h3 { color: #555; }
+  .legend { display: flex; gap: 20px; margin: 15px 0; padding: 10px;
+            background: white; border-radius: 8px; border: 1px solid #ddd; }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-swatch { width: 20px; height: 20px; border-radius: 3px;
+                   border: 1px solid #999; }
+  .instructions { background: #e8f4fd; border-left: 4px solid #3498db;
+                  padding: 15px 20px; margin: 20px 0; border-radius: 4px; }
+  .stats-table { border-collapse: collapse; margin: 10px 0; }
+  .stats-table th, .stats-table td { border: 1px solid #ccc; padding: 8px 12px;
+                                      text-align: center; }
+  .stats-table th { background: #3498db; color: white; }
+  .stats-table tr:nth-child(even) { background: #f0f0f0; }
+  .category-section { margin: 20px 0; padding: 15px; background: white;
+                      border-radius: 8px; border: 1px solid #ddd; }
+  .tile-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+               gap: 15px; margin: 15px 0; }
+  .tile-card { background: white; border-radius: 8px; border: 1px solid #ddd;
+               overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+  .tile-card img { width: 100%; height: auto; display: block; }
+  .tile-card .info { padding: 10px; font-size: 0.9em; }
+  .tile-card .info strong { color: #2c3e50; }
+  .cat-low { border-left: 4px solid #808080; }
+  .cat-mid { border-left: 4px solid #ffc107; }
+  .cat-high { border-left: 4px solid #e74c3c; }
+  .footer { margin-top: 30px; padding: 15px; background: #ecf0f1;
+            border-radius: 8px; font-size: 0.85em; color: #666; }
+</style>
+</head>
+<body>
+<h1>CLDN18.2 Composite Grade — 30-Tile Pathologist Review</h1>
+<p>Generated: 2026-03-19 20:24</p>
+
+<div class="instructions">
+<h3>Review Instructions for Dr. Fiset</h3>
+<ol>
+  <li><strong>Each tile</strong> shows a 512x512 region at ~0.46 um/px from a BC control slide.</li>
+  <li><strong>Cell boundaries</strong> are drawn as colored outlines based on the algorithm's
+      composite grade assignment (thickness + completeness + intensity).</li>
+  <li><strong>Color code:</strong> see legend below.</li>
+  <li>For each tile, a <strong>CSV file</strong> is provided with per-cell measurements
+      (membrane thickness, completeness, DAB intensity, composite grade).</li>
+  <li>Tiles are grouped into <strong>3 categories</strong> (10 each) by mean composite grade:
+      <em>Low</em> (expected negative/1+), <em>Mid</em> (expected 2+), <em>High</em> (expected 3+).</li>
+  <li>Please assess whether the <strong>grade assignments match your clinical judgment</strong>
+      for each tile. Note any disagreements or boundary cases.</li>
+</ol>
+</div>
+<div class="legend">
+  <div class="legend-item"><div class="legend-swatch" style="background:rgb(128,128,128)"></div><span>Negative (0)</span></div>
+  <div class="legend-item"><div class="legend-swatch" style="background:rgb(0,128,255)"></div><span>Weak (1+)</span></div>
+  <div class="legend-item"><div class="legend-swatch" style="background:rgb(255,255,0)"></div><span>Moderate (2+)</span></div>
+  <div class="legend-item"><div class="legend-swatch" style="background:rgb(255,0,0)"></div><span>Strong (3+)</span></div>
+</div>
+<h2>Category Statistics</h2>
+<table class="stats-table">
+<tr><th>Category</th><th>Tiles</th><th>Total Cells</th><th>Mean Grade Range</th><th>Mean Grade Avg</th><th>Neg %</th><th>1+ %</th><th>2+ %</th><th>3+ %</th><th>Slides</th></tr>
+<tr><td><strong>Low grade (expected 0/1+)</strong></td><td>10</td><td>468</td><td>1.91 - 2.73</td><td>2.54</td><td>0.0%</td><td>13.9%</td><td>14.5%</td><td>71.6%</td><td>BC_ClassII, BC_ClassIII</td></tr>
+<tr><td><strong>Mid grade (expected 2+)</strong></td><td>10</td><td>671</td><td>2.73 - 2.85</td><td>2.79</td><td>0.0%</td><td>5.8%</td><td>9.5%</td><td>84.6%</td><td>BC_ClassII, BC_ClassIII</td></tr>
+<tr><td><strong>High grade (expected 3+)</strong></td><td>10</td><td>390</td><td>2.85 - 3.00</td><td>2.92</td><td>0.0%</td><td>1.8%</td><td>6.2%</td><td>92.1%</td><td>BC_ClassII, BC_ClassIII</td></tr>
+</table>
+
+<div class="category-section cat-low">
+<h2>Low grade (expected 0/1+)</h2>
+<div class="tile-grid">
+  <div class="tile-card">
+    <img src="tile_00_ClassII_low.png" alt="Tile 0">
+    <div class="info">
+      <strong>Tile 00</strong> — BC_ClassII<br>
+      Cells: 45 | Mean grade: 1.91<br>
+      Negative: 0, Weak: 18, Moderate: 13, Strong: 14<br>
+      <a href="tile_00_ClassII_low.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_05_ClassIII_low.png" alt="Tile 5">
+    <div class="info">
+      <strong>Tile 05</strong> — BC_ClassIII<br>
+      Cells: 21 | Mean grade: 2.19<br>
+      Negative: 0, Weak: 7, Moderate: 3, Strong: 11<br>
+      <a href="tile_05_ClassIII_low.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_01_ClassII_low.png" alt="Tile 1">
+    <div class="info">
+      <strong>Tile 01</strong> — BC_ClassII<br>
+      Cells: 47 | Mean grade: 2.53<br>
+      Negative: 0, Weak: 9, Moderate: 4, Strong: 34<br>
+      <a href="tile_01_ClassII_low.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_06_ClassIII_low.png" alt="Tile 6">
+    <div class="info">
+      <strong>Tile 06</strong> — BC_ClassIII<br>
+      Cells: 35 | Mean grade: 2.60<br>
+      Negative: 0, Weak: 5, Moderate: 4, Strong: 26<br>
+      <a href="tile_06_ClassIII_low.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_02_ClassII_low.png" alt="Tile 2">
+    <div class="info">
+      <strong>Tile 02</strong> — BC_ClassII<br>
+      Cells: 37 | Mean grade: 2.62<br>
+      Negative: 0, Weak: 4, Moderate: 6, Strong: 27<br>
+      <a href="tile_02_ClassII_low.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_07_ClassIII_low.png" alt="Tile 7">
+    <div class="info">
+      <strong>Tile 07</strong> — BC_ClassIII<br>
+      Cells: 77 | Mean grade: 2.68<br>
+      Negative: 0, Weak: 4, Moderate: 17, Strong: 56<br>
+      <a href="tile_07_ClassIII_low.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_03_ClassII_low.png" alt="Tile 3">
+    <div class="info">
+      <strong>Tile 03</strong> — BC_ClassII<br>
+      Cells: 32 | Mean grade: 2.69<br>
+      Negative: 0, Weak: 2, Moderate: 6, Strong: 24<br>
+      <a href="tile_03_ClassII_low.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_08_ClassIII_low.png" alt="Tile 8">
+    <div class="info">
+      <strong>Tile 08</strong> — BC_ClassIII<br>
+      Cells: 24 | Mean grade: 2.71<br>
+      Negative: 0, Weak: 2, Moderate: 3, Strong: 19<br>
+      <a href="tile_08_ClassIII_low.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_04_ClassII_low.png" alt="Tile 4">
+    <div class="info">
+      <strong>Tile 04</strong> — BC_ClassII<br>
+      Cells: 15 | Mean grade: 2.73<br>
+      Negative: 0, Weak: 1, Moderate: 2, Strong: 12<br>
+      <a href="tile_04_ClassII_low.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_09_ClassIII_low.png" alt="Tile 9">
+    <div class="info">
+      <strong>Tile 09</strong> — BC_ClassIII<br>
+      Cells: 135 | Mean grade: 2.73<br>
+      Negative: 0, Weak: 13, Moderate: 10, Strong: 112<br>
+      <a href="tile_09_ClassIII_low.csv">Download CSV</a>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="category-section cat-mid">
+<h2>Mid grade (expected 2+)</h2>
+<div class="tile-grid">
+  <div class="tile-card">
+    <img src="tile_15_ClassIII_mid.png" alt="Tile 15">
+    <div class="info">
+      <strong>Tile 15</strong> — BC_ClassIII<br>
+      Cells: 94 | Mean grade: 2.73<br>
+      Negative: 0, Weak: 8, Moderate: 9, Strong: 77<br>
+      <a href="tile_15_ClassIII_mid.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_10_ClassII_mid.png" alt="Tile 10">
+    <div class="info">
+      <strong>Tile 10</strong> — BC_ClassII<br>
+      Cells: 64 | Mean grade: 2.73<br>
+      Negative: 0, Weak: 1, Moderate: 15, Strong: 48<br>
+      <a href="tile_10_ClassII_mid.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_11_ClassII_mid.png" alt="Tile 11">
+    <div class="info">
+      <strong>Tile 11</strong> — BC_ClassII<br>
+      Cells: 63 | Mean grade: 2.76<br>
+      Negative: 0, Weak: 6, Moderate: 3, Strong: 54<br>
+      <a href="tile_11_ClassII_mid.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_16_ClassIII_mid.png" alt="Tile 16">
+    <div class="info">
+      <strong>Tile 16</strong> — BC_ClassIII<br>
+      Cells: 91 | Mean grade: 2.77<br>
+      Negative: 0, Weak: 6, Moderate: 9, Strong: 76<br>
+      <a href="tile_16_ClassIII_mid.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_12_ClassII_mid.png" alt="Tile 12">
+    <div class="info">
+      <strong>Tile 12</strong> — BC_ClassII<br>
+      Cells: 24 | Mean grade: 2.79<br>
+      Negative: 0, Weak: 2, Moderate: 1, Strong: 21<br>
+      <a href="tile_12_ClassII_mid.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_17_ClassIII_mid.png" alt="Tile 17">
+    <div class="info">
+      <strong>Tile 17</strong> — BC_ClassIII<br>
+      Cells: 95 | Mean grade: 2.80<br>
+      Negative: 0, Weak: 8, Moderate: 3, Strong: 84<br>
+      <a href="tile_17_ClassIII_mid.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_13_ClassII_mid.png" alt="Tile 13">
+    <div class="info">
+      <strong>Tile 13</strong> — BC_ClassII<br>
+      Cells: 22 | Mean grade: 2.82<br>
+      Negative: 0, Weak: 2, Moderate: 0, Strong: 20<br>
+      <a href="tile_13_ClassII_mid.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_18_ClassIII_mid.png" alt="Tile 18">
+    <div class="info">
+      <strong>Tile 18</strong> — BC_ClassIII<br>
+      Cells: 138 | Mean grade: 2.83<br>
+      Negative: 0, Weak: 2, Moderate: 20, Strong: 116<br>
+      <a href="tile_18_ClassIII_mid.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_14_ClassII_mid.png" alt="Tile 14">
+    <div class="info">
+      <strong>Tile 14</strong> — BC_ClassII<br>
+      Cells: 60 | Mean grade: 2.85<br>
+      Negative: 0, Weak: 3, Moderate: 3, Strong: 54<br>
+      <a href="tile_14_ClassII_mid.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_19_ClassIII_mid.png" alt="Tile 19">
+    <div class="info">
+      <strong>Tile 19</strong> — BC_ClassIII<br>
+      Cells: 20 | Mean grade: 2.85<br>
+      Negative: 0, Weak: 1, Moderate: 1, Strong: 18<br>
+      <a href="tile_19_ClassIII_mid.csv">Download CSV</a>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="category-section cat-high">
+<h2>High grade (expected 3+)</h2>
+<div class="tile-grid">
+  <div class="tile-card">
+    <img src="tile_25_ClassIII_high.png" alt="Tile 25">
+    <div class="info">
+      <strong>Tile 25</strong> — BC_ClassIII<br>
+      Cells: 107 | Mean grade: 2.85<br>
+      Negative: 0, Weak: 6, Moderate: 4, Strong: 97<br>
+      <a href="tile_25_ClassIII_high.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_20_ClassII_high.png" alt="Tile 20">
+    <div class="info">
+      <strong>Tile 20</strong> — BC_ClassII<br>
+      Cells: 47 | Mean grade: 2.85<br>
+      Negative: 0, Weak: 0, Moderate: 7, Strong: 40<br>
+      <a href="tile_20_ClassII_high.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_26_ClassIII_high.png" alt="Tile 26">
+    <div class="info">
+      <strong>Tile 26</strong> — BC_ClassIII<br>
+      Cells: 32 | Mean grade: 2.88<br>
+      Negative: 0, Weak: 1, Moderate: 2, Strong: 29<br>
+      <a href="tile_26_ClassIII_high.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_21_ClassII_high.png" alt="Tile 21">
+    <div class="info">
+      <strong>Tile 21</strong> — BC_ClassII<br>
+      Cells: 26 | Mean grade: 2.88<br>
+      Negative: 0, Weak: 0, Moderate: 3, Strong: 23<br>
+      <a href="tile_21_ClassII_high.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_27_ClassIII_high.png" alt="Tile 27">
+    <div class="info">
+      <strong>Tile 27</strong> — BC_ClassIII<br>
+      Cells: 21 | Mean grade: 2.90<br>
+      Negative: 0, Weak: 0, Moderate: 2, Strong: 19<br>
+      <a href="tile_27_ClassIII_high.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_22_ClassII_high.png" alt="Tile 22">
+    <div class="info">
+      <strong>Tile 22</strong> — BC_ClassII<br>
+      Cells: 52 | Mean grade: 2.92<br>
+      Negative: 0, Weak: 0, Moderate: 4, Strong: 48<br>
+      <a href="tile_22_ClassII_high.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_28_ClassIII_high.png" alt="Tile 28">
+    <div class="info">
+      <strong>Tile 28</strong> — BC_ClassIII<br>
+      Cells: 27 | Mean grade: 2.96<br>
+      Negative: 0, Weak: 0, Moderate: 1, Strong: 26<br>
+      <a href="tile_28_ClassIII_high.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_23_ClassII_high.png" alt="Tile 23">
+    <div class="info">
+      <strong>Tile 23</strong> — BC_ClassII<br>
+      Cells: 28 | Mean grade: 2.96<br>
+      Negative: 0, Weak: 0, Moderate: 1, Strong: 27<br>
+      <a href="tile_23_ClassII_high.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_24_ClassII_high.png" alt="Tile 24">
+    <div class="info">
+      <strong>Tile 24</strong> — BC_ClassII<br>
+      Cells: 14 | Mean grade: 3.00<br>
+      Negative: 0, Weak: 0, Moderate: 0, Strong: 14<br>
+      <a href="tile_24_ClassII_high.csv">Download CSV</a>
+    </div>
+  </div>
+  <div class="tile-card">
+    <img src="tile_29_ClassIII_high.png" alt="Tile 29">
+    <div class="info">
+      <strong>Tile 29</strong> — BC_ClassIII<br>
+      Cells: 36 | Mean grade: 3.00<br>
+      Negative: 0, Weak: 0, Moderate: 0, Strong: 36<br>
+      <a href="tile_29_ClassIII_high.csv">Download CSV</a>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="footer">
+  <p><strong>Pipeline:</strong> InstanSeg brightfield_cells_nuclei v2 +
+     membrane bar-filter (8 orientations, FWHM thickness) +
+     composite grading (thickness + completeness + intensity).</p>
+  <p><strong>Slides:</strong> BC_ClassII, BC_ClassIII (positive controls, CLDN18.2 IHC).</p>
+  <p><strong>Tile size:</strong> 512px at level 1 (~0.46 um/px), stride 352px (padding 80px).</p>
+  <p><strong>Composite grade:</strong> 0 = negative, 1+ = weak, 2+ = moderate, 3+ = strong,
+     based on membrane DAB intensity, thickness (FWHM), and completeness (fraction of
+     membrane perimeter with signal).</p>
+</div>
+</body>
+</html>

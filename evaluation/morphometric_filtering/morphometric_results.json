@@ -1,0 +1,271 @@
+{
+  "morphometric_stats": [
+    {
+      "slide": "BC_ClassIII",
+      "n_cells": 98457,
+      "area_um2": {
+        "mean": 40.881113977279036,
+        "median": 35.72959445241682,
+        "p5": 17.12483521092167,
+        "p25": 26.215797113015892,
+        "p75": 50.317417039498245,
+        "p95": 82.45291027480805
+      },
+      "solidity": {
+        "mean": 0.9924231557971396,
+        "median": 1.0,
+        "pct_below_0.9": 2.0993936439257745,
+        "pct_above_1.0": 84.5252242095534
+      },
+      "aspect_ratio": {
+        "mean": 1.8897697937975637,
+        "median": 1.6856028046735152,
+        "p95": 3.2848053437641016,
+        "pct_above_2.0": 32.66197426287618,
+        "pct_above_2.5": 16.731161826990462
+      }
+    },
+    {
+      "slide": "BC_ClassII",
+      "n_cells": 62881,
+      "area_um2": {
+        "mean": 41.383869398780774,
+        "median": 35.30675901511011,
+        "p5": 15.644911180348194,
+        "p25": 25.158708519749123,
+        "p75": 52.008758788725075,
+        "p95": 87.10410008518183
+      },
+      "solidity": {
+        "mean": 0.9925274324360013,
+        "median": 1.0,
+        "pct_below_0.9": 1.9385824016793625,
+        "pct_above_1.0": 83.95540783384489
+      },
+      "aspect_ratio": {
+        "mean": 1.8227811308339763,
+        "median": 1.6446615334015438,
+        "p95": 3.0670371104073815,
+        "pct_above_2.0": 28.361508245734008,
+        "pct_above_2.5": 12.456862963375265
+      }
+    }
+  ],
+  "sensitivity_analysis": [
+    {
+      "slide": "BC_ClassIII",
+      "filter": "No filter",
+      "min_area": 0,
+      "min_solidity": 0,
+      "total_before": 98457,
+      "total_after": 98457,
+      "pct_retained": 100.0,
+      "h_score": 280.45745858598167,
+      "pct_positive": 95.71894329504251,
+      "grade_dist": {
+        "0": 0,
+        "1": 4215,
+        "2": 10811,
+        "3": 83431
+      }
+    },
+    {
+      "slide": "BC_ClassIII",
+      "filter": "Mild (area\u226515)",
+      "min_area": 15,
+      "min_solidity": 0,
+      "total_before": 98457,
+      "total_after": 95850,
+      "pct_retained": 97.35214357536792,
+      "h_score": 281.02138758476787,
+      "pct_positive": 95.7850808555034,
+      "grade_dist": {
+        "0": 0,
+        "1": 4040,
+        "2": 10111,
+        "3": 81699
+      }
+    },
+    {
+      "slide": "BC_ClassIII",
+      "filter": "Moderate (area\u226525, sol\u22650.85)",
+      "min_area": 25,
+      "min_solidity": 0.85,
+      "max_aspect": 3.0,
+      "total_before": 98457,
+      "total_after": 69640,
+      "pct_retained": 70.73138527479001,
+      "h_score": 283.00832854681215,
+      "pct_positive": 96.39144170017232,
+      "grade_dist": {
+        "0": 0,
+        "1": 2513,
+        "2": 6807,
+        "3": 60320
+      }
+    },
+    {
+      "slide": "BC_ClassIII",
+      "filter": "Standard (area\u226525, sol\u22650.9, asp\u22642.5)",
+      "min_area": 25,
+      "min_solidity": 0.9,
+      "max_aspect": 2.5,
+      "total_before": 98457,
+      "total_after": 61604,
+      "pct_retained": 62.5694465604274,
+      "h_score": 282.1391468086488,
+      "pct_positive": 96.3151743393286,
+      "grade_dist": {
+        "0": 0,
+        "1": 2270,
+        "2": 6463,
+        "3": 52871
+      }
+    },
+    {
+      "slide": "BC_ClassIII",
+      "filter": "Strict (area\u226535, sol\u22650.92, asp\u22642.0)",
+      "min_area": 35,
+      "min_solidity": 0.92,
+      "max_aspect": 2.0,
+      "total_before": 98457,
+      "total_after": 33429,
+      "pct_retained": 33.952893141168225,
+      "h_score": 283.43952855305275,
+      "pct_positive": 97.54703999521374,
+      "grade_dist": {
+        "0": 0,
+        "1": 820,
+        "2": 3896,
+        "3": 28713
+      }
+    },
+    {
+      "slide": "BC_ClassIII",
+      "filter": "Debate (area\u226580, sol\u22650.9, asp\u22642.0)",
+      "min_area": 80,
+      "min_solidity": 0.9,
+      "max_aspect": 2.0,
+      "total_before": 98457,
+      "total_after": 4391,
+      "pct_retained": 4.459814944595102,
+      "h_score": 298.95240264176726,
+      "pct_positive": 99.97722614438625,
+      "grade_dist": {
+        "0": 0,
+        "1": 1,
+        "2": 44,
+        "3": 4346
+      }
+    },
+    {
+      "slide": "BC_ClassII",
+      "filter": "No filter",
+      "min_area": 0,
+      "min_solidity": 0,
+      "total_before": 62881,
+      "total_after": 62881,
+      "pct_retained": 100.0,
+      "h_score": 274.3070243793833,
+      "pct_positive": 92.5382866048568,
+      "grade_dist": {
+        "0": 1,
+        "1": 4691,
+        "2": 6771,
+        "3": 51418
+      }
+    },
+    {
+      "slide": "BC_ClassII",
+      "filter": "Mild (area\u226515)",
+      "min_area": 15,
+      "min_solidity": 0,
+      "total_before": 62881,
+      "total_after": 60250,
+      "pct_retained": 95.81590623558786,
+      "h_score": 275.38755186721994,
+      "pct_positive": 92.60248962655602,
+      "grade_dist": {
+        "0": 0,
+        "1": 4457,
+        "2": 5915,
+        "3": 49878
+      }
+    },
+    {
+      "slide": "BC_ClassII",
+      "filter": "Moderate (area\u226525, sol\u22650.85)",
+      "min_area": 25,
+      "min_solidity": 0.85,
+      "max_aspect": 3.0,
+      "total_before": 62881,
+      "total_after": 44251,
+      "pct_retained": 70.37260857810786,
+      "h_score": 280.42530112313847,
+      "pct_positive": 93.58432577794852,
+      "grade_dist": {
+        "0": 0,
+        "1": 2839,
+        "2": 2984,
+        "3": 38428
+      }
+    },
+    {
+      "slide": "BC_ClassII",
+      "filter": "Standard (area\u226525, sol\u22650.9, asp\u22642.5)",
+      "min_area": 25,
+      "min_solidity": 0.9,
+      "max_aspect": 2.5,
+      "total_before": 62881,
+      "total_after": 40369,
+      "pct_retained": 64.1990426360904,
+      "h_score": 280.43795982065444,
+      "pct_positive": 93.507394287696,
+      "grade_dist": {
+        "0": 0,
+        "1": 2621,
+        "2": 2655,
+        "3": 35093
+      }
+    },
+    {
+      "slide": "BC_ClassII",
+      "filter": "Strict (area\u226535, sol\u22650.92, asp\u22642.0)",
+      "min_area": 35,
+      "min_solidity": 0.92,
+      "max_aspect": 2.0,
+      "total_before": 62881,
+      "total_after": 22159,
+      "pct_retained": 35.23957952322641,
+      "h_score": 286.67358635317476,
+      "pct_positive": 95.32921160702197,
+      "grade_dist": {
+        "0": 0,
+        "1": 1035,
+        "2": 883,
+        "3": 20241
+      }
+    },
+    {
+      "slide": "BC_ClassII",
+      "filter": "Debate (area\u226580, sol\u22650.9, asp\u22642.0)",
+      "min_area": 80,
+      "min_solidity": 0.9,
+      "max_aspect": 2.0,
+      "total_before": 62881,
+      "total_after": 3423,
+      "pct_retained": 5.443615718579539,
+      "h_score": 298.510078878177,
+      "pct_positive": 99.44493134677184,
+      "grade_dist": {
+        "0": 0,
+        "1": 19,
+        "2": 13,
+        "3": 3391
+      }
+    }
+  ],
+  "recommended_filter": "Standard (area\u226525, sol\u22650.9, asp\u22642.5)",
+  "note": "Debate threshold (area\u226580) would remove 75%+ of cells \u2014 too aggressive for our model's polygon sizes. Standard threshold removes small fragments and elongated fibroblasts while retaining epithelial population.",
+  "solidity_warning": "Solidity values >1.0 detected in data \u2014 likely numerical artifact from polygon computation. Values clamped to 1.0 for filtering."
+}

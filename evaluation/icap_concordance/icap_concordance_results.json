@@ -1,0 +1,171 @@
+{
+  "analysis": {
+    "slides_analyzed": 2,
+    "per_slide": [
+      {
+        "slide": "BC_ClassIII",
+        "our_model": {
+          "Patient_Tissue": {
+            "slide": "BC_ClassIII",
+            "region": "Patient_Tissue",
+            "n_cells": 72993,
+            "h_score": 280.83514857589086,
+            "pct_positive": 96.7106434863617,
+            "pct_3plus": 84.12450508952914,
+            "mean_membrane_dab": 2.0286050179818784,
+            "mean_completeness": 0.7386594063067866,
+            "mean_thickness_px": 11.142561615497376
+          },
+          "iCAP_Control": {
+            "slide": "BC_ClassIII",
+            "region": "iCAP_Control",
+            "n_cells": 25459,
+            "h_score": 279.37075297537217,
+            "pct_positive": 92.87481833536275,
+            "pct_3plus": 86.49593464000944,
+            "mean_membrane_dab": 1.1921522318693518,
+            "mean_completeness": 0.7742525115353176,
+            "mean_thickness_px": 12.687163674928316
+          }
+        },
+        "baseline": {
+          "Patient_Tissue": {
+            "n_cells": 235944,
+            "h_score": 267.4084,
+            "pct_positive": 96.1211
+          },
+          "Unknown": {
+            "n_cells": 11,
+            "h_score": 263.6364,
+            "pct_positive": 100.0
+          },
+          "iCAP_Control": {
+            "n_cells": 68062,
+            "h_score": 227.9319,
+            "pct_positive": 85.4148
+          }
+        },
+        "concordance": {
+          "h_score_diff": 1.4643956005186851,
+          "pct_pos_diff": 3.835825150998957,
+          "h_score_ratio": 1.005241764160788
+        }
+      },
+      {
+        "slide": "BC_ClassII",
+        "our_model": {
+          "Patient_Tissue": {
+            "slide": "BC_ClassII",
+            "region": "Patient_Tissue",
+            "n_cells": 41535,
+            "h_score": 278.9599133261105,
+            "pct_positive": 94.53954496208017,
+            "pct_3plus": 84.42036836403034,
+            "mean_membrane_dab": 2.130306716582951,
+            "mean_completeness": 0.7926457313394714,
+            "mean_thickness_px": 11.226351270013241
+          },
+          "iCAP_Control": {
+            "slide": "BC_ClassII",
+            "region": "iCAP_Control",
+            "n_cells": 21346,
+            "h_score": 265.2534432680596,
+            "pct_positive": 88.6442424810269,
+            "pct_3plus": 76.61388550548112,
+            "mean_membrane_dab": 1.079052768700029,
+            "mean_completeness": 0.7929498705956707,
+            "mean_thickness_px": 11.237726037665137
+          }
+        },
+        "baseline": {
+          "Patient_Tissue": {
+            "n_cells": 327641,
+            "h_score": 115.8906,
+            "pct_positive": 46.4148
+          },
+          "Unknown": {
+            "n_cells": 7,
+            "h_score": 142.8571,
+            "pct_positive": 85.7143
+          },
+          "iCAP_Control": {
+            "n_cells": 314998,
+            "h_score": 45.3708,
+            "pct_positive": 23.3973
+          }
+        },
+        "concordance": {
+          "h_score_diff": 13.706470058050911,
+          "pct_pos_diff": 5.895302481053278,
+          "h_score_ratio": 1.051673108892311
+        }
+      }
+    ],
+    "aggregate": {}
+  },
+  "our_per_region": [
+    {
+      "slide": "BC_ClassIII",
+      "region": "Patient_Tissue",
+      "n_cells": 72993,
+      "h_score": 280.83514857589086,
+      "pct_positive": 96.7106434863617,
+      "pct_3plus": 84.12450508952914,
+      "mean_membrane_dab": 2.0286050179818784,
+      "mean_completeness": 0.7386594063067866,
+      "mean_thickness_px": 11.142561615497376
+    },
+    {
+      "slide": "BC_ClassIII",
+      "region": "iCAP_Control",
+      "n_cells": 25459,
+      "h_score": 279.37075297537217,
+      "pct_positive": 92.87481833536275,
+      "pct_3plus": 86.49593464000944,
+      "mean_membrane_dab": 1.1921522318693518,
+      "mean_completeness": 0.7742525115353176,
+      "mean_thickness_px": 12.687163674928316
+    },
+    {
+      "slide": "BC_ClassIII",
+      "region": "Unknown",
+      "n_cells": 5,
+      "h_score": 300.0,
+      "pct_positive": 100.0,
+      "pct_3plus": 100.0,
+      "mean_membrane_dab": 1.9341312766075134,
+      "mean_completeness": 0.91592174760907,
+      "mean_thickness_px": 13.8
+    },
+    {
+      "slide": "BC_ClassII",
+      "region": "Patient_Tissue",
+      "n_cells": 41535,
+      "h_score": 278.9599133261105,
+      "pct_positive": 94.53954496208017,
+      "pct_3plus": 84.42036836403034,
+      "mean_membrane_dab": 2.130306716582951,
+      "mean_completeness": 0.7926457313394714,
+      "mean_thickness_px": 11.226351270013241
+    },
+    {
+      "slide": "BC_ClassII",
+      "region": "iCAP_Control",
+      "n_cells": 21346,
+      "h_score": 265.2534432680596,
+      "pct_positive": 88.6442424810269,
+      "pct_3plus": 76.61388550548112,
+      "mean_membrane_dab": 1.079052768700029,
+      "mean_completeness": 0.7929498705956707,
+      "mean_thickness_px": 11.237726037665137
+    }
+  ],
+  "summary": {
+    "slides_analyzed": 2,
+    "regions_found": [
+      "iCAP_Control",
+      "Patient_Tissue",
+      "Unknown"
+    ]
+  }
+}
