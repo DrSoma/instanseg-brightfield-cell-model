@@ -1,0 +1,25 @@
+{
+  "results": {
+    "v1.0 (deployed)": {
+      "brown": 150.4,
+      "blue": 248.7,
+      "ratio": 0.6,
+      "loss": 0.889
+    },
+    "v2.0c (strong aug)": {
+      "brown": 2.6,
+      "blue": 16.5,
+      "ratio": 0.2,
+      "loss": 0.473
+    },
+    "v2.0d (zero aug)": {
+      "brown": 0.0,
+      "blue": 0.2,
+      "ratio": 0.2,
+      "loss": 0.4
+    }
+  },
+  "slide": "CLDN0042.svs",
+  "n_brown": 20,
+  "n_blue": 20
+}
