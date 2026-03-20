@@ -1,16 +1,20 @@
 # CLDN18.2 Brightfield Cell Model — Complete Roadmap
-## Date: 2026-03-19 | Status: v1.0 validated by pathologist on 2 control slides
+## Date: 2026-03-19 | Status: Day 6 — 5 validation tasks DONE, 200-slide cohort running
 
 ---
 
-## Current State
+## Current State (Day 6 update)
 
 - Model segments cell boundaries on brightfield CLDN18.2 IHC using self-supervised DAB membrane ground truth
 - Pipeline integration working: 161k cells on 2 BC control slides via production instanseg_batched.py
 - 8-test validation confirms DAB selectivity (33x: 162 vs 5 cells/tile on brown vs blue tissue)
 - Dr. Fiset validated 97-98% positivity rates as accurate on BC_ClassII and BC_ClassIII
-- Heatmaps correctly show epithelium (lit) vs LOD (dark)
-- Per-cell membrane thickness (FWHM), completeness, and intensity all measured
+- **NEW: CLSI EP05 PASS** — reproducibility test passes all metrics (CV <15%)
+- **NEW: iCAP concordance** — our inter-region H-score diff 1-14 vs baseline 39-71
+- **NEW: Morphometric filtering** — standard filter retains 63%, minimal scoring impact
+- **NEW: 30-tile pathologist export** ready for Dr. Fiset review
+- **NEW: 200-slide cohort running** on GPU 1 (50/200 slides done)
+- **NEW: v2.0 Phase A launched** (waiting for GPU 0)
 - Composite grading thresholds are PRELIMINARY — need pathologist calibration (3+ population too high at 82%)
 
 ---

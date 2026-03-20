@@ -1,0 +1,48 @@
+{
+  "disclaimer": "THRESHOLDS_UNCALIBRATED -- RESEARCH USE ONLY. Do NOT use for clinical decisions. Composite grades use preliminary thresholds (0.10/0.20/0.35) that have not been calibrated against pathologist consensus.",
+  "timestamp": "2026-03-20 06:35:34",
+  "thresholds": {
+    "grade_thresholds_dab_od": [
+      0.1,
+      0.2,
+      0.35
+    ],
+    "eligibility_pct": 75.0,
+    "eligibility_grade": ">=2+",
+    "calibrated": false
+  },
+  "baseline": {
+    "source": "/pathodata/Claudin18_project/exports/cldn18_region_summary.csv",
+    "n_slides": 112,
+    "n_eligible": 1,
+    "n_not_eligible": 111,
+    "eligibility_rate_pct": 0.8928571428571428
+  },
+  "cohort": {
+    "n_slides": 194,
+    "n_with_membrane_cols": 0,
+    "n_eligible": 0,
+    "n_not_eligible": 194,
+    "eligibility_rate_pct": 0.0,
+    "total_cells": 49856188,
+    "total_measured": 0
+  },
+  "comparison": {
+    "n_matched_slides": 97,
+    "n_concordant": 97,
+    "n_discordant": 0,
+    "concordance_rate_pct": 100.0,
+    "n_gained_eligibility": 0,
+    "n_lost_eligibility": 0,
+    "pct_2plus_correlation": NaN,
+    "pct_2plus_mae": 16.604843217854704,
+    "h_score_correlation": NaN,
+    "h_score_mae": 91.46907216494846
+  },
+  "cell_counts": {
+    "baseline_mean": 828603.793814433,
+    "baseline_median": 798667.0,
+    "cohort_mean": 486143.86597938143,
+    "cohort_median": 354097.0
+  }
+}
