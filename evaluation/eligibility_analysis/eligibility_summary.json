@@ -1,6 +1,6 @@
 {
   "disclaimer": "THRESHOLDS_UNCALIBRATED -- RESEARCH USE ONLY. Do NOT use for clinical decisions. Composite grades use preliminary thresholds (0.10/0.20/0.35) that have not been calibrated against pathologist consensus.",
-  "timestamp": "2026-03-20 06:35:34",
+  "timestamp": "2026-03-20 13:28:47",
   "thresholds": {
     "grade_thresholds_dab_od": [
       0.1,
@@ -19,30 +19,30 @@
     "eligibility_rate_pct": 0.8928571428571428
   },
   "cohort": {
-    "n_slides": 194,
-    "n_with_membrane_cols": 0,
-    "n_eligible": 0,
-    "n_not_eligible": 194,
-    "eligibility_rate_pct": 0.0,
-    "total_cells": 49856188,
-    "total_measured": 0
+    "n_slides": 191,
+    "n_with_membrane_cols": 130,
+    "n_eligible": 57,
+    "n_not_eligible": 134,
+    "eligibility_rate_pct": 29.84293193717277,
+    "total_cells": 47721595,
+    "total_measured": 37108750
   },
   "comparison": {
-    "n_matched_slides": 97,
-    "n_concordant": 97,
-    "n_discordant": 0,
-    "concordance_rate_pct": 100.0,
-    "n_gained_eligibility": 0,
+    "n_matched_slides": 95,
+    "n_concordant": 80,
+    "n_discordant": 15,
+    "concordance_rate_pct": 84.21052631578947,
+    "n_gained_eligibility": 15,
     "n_lost_eligibility": 0,
-    "pct_2plus_correlation": NaN,
-    "pct_2plus_mae": 16.604843217854704,
-    "h_score_correlation": NaN,
-    "h_score_mae": 91.46907216494846
+    "pct_2plus_correlation": -0.10952606378727155,
+    "pct_2plus_mae": 36.754486861484075,
+    "h_score_correlation": 0.02743170239366364,
+    "h_score_mae": 75.8791064448351
   },
   "cell_counts": {
-    "baseline_mean": 828603.793814433,
+    "baseline_mean": 820594.6315789474,
     "baseline_median": 798667.0,
-    "cohort_mean": 486143.86597938143,
+    "cohort_mean": 476568.1789473684,
     "cohort_median": 354097.0
   }
 }
