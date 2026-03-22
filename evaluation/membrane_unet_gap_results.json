@@ -1,0 +1,16 @@
+{
+  "argmax": {
+    "membrane": 0.4265,
+    "cytoplasm": 0.2184,
+    "gap": 0.2081,
+    "status": "PASS",
+    "n_cells": 4233
+  },
+  "soft": {
+    "membrane": 0.6057,
+    "cytoplasm": 0.3131,
+    "gap": 0.2926,
+    "status": "PASS",
+    "n_cells": 5935
+  }
+}

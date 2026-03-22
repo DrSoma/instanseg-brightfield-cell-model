@@ -1,0 +1,30 @@
+{
+  "n_tiles": 123,
+  "n_skipped": 77,
+  "max_expand_px": 4,
+  "dab_threshold": 0.08,
+  "bar_threshold": 0.0,
+  "methods": {
+    "original": {
+      "membrane_dab_mean": 0.2523,
+      "cytoplasm_dab_mean": 0.276,
+      "gap": -0.0237,
+      "status": "FAIL",
+      "n_cells": 4124
+    },
+    "method_a_erosion": {
+      "membrane_dab_mean": 0.2765,
+      "cytoplasm_dab_mean": 0.2917,
+      "gap": -0.0152,
+      "status": "FAIL",
+      "n_cells": 3074
+    },
+    "method_b_watershed": {
+      "membrane_dab_mean": 0.2585,
+      "cytoplasm_dab_mean": 0.2953,
+      "gap": -0.0368,
+      "status": "FAIL",
+      "n_cells": 538
+    }
+  }
+}

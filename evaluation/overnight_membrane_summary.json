@@ -1,0 +1,14 @@
+{
+  "training_completed": true,
+  "argmax_gap": -999,
+  "argmax_status": "NO DATA",
+  "soft_weight_gap": null,
+  "soft_weight_status": null,
+  "next_steps": [
+    "1. If soft-weight gap > 0: use softmax probability as measurement weight",
+    "2. Try retraining with membrane class weight = 8.0 or 10.0",
+    "3. Generate refined training labels (DAB re-watershed) and retrain InstanSeg",
+    "4. Consider that the bar-filter (gap=+0.127) already works \u2014 the model may not need to replace it"
+  ],
+  "bar_filter_reference_gap": 0.127
+}
