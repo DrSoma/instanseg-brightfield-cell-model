@@ -1,0 +1,10 @@
+{
+  "model": "InstanSeg v3.0",
+  "fixed_ring": {
+    "membrane": 0.2079,
+    "cytoplasm": 0.2239,
+    "gap": -0.016,
+    "status": "FAIL",
+    "n_cells": 1562
+  }
+}
